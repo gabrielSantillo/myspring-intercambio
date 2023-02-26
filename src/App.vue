@@ -6,15 +6,14 @@
 
 <style lang="scss">
 * {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
 }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+a {
+  &.router-link-exact-active {
+    color: #42b983;
   }
+}
 </style>
