@@ -1,8 +1,20 @@
 <template>
   <div id="app">
+    <header-component></header-component>
     <router-view/>
   </div>
 </template>
+
+<script>
+import HeaderComponent from './components/HeaderComponent.vue'
+
+
+export default {
+  components: { HeaderComponent },
+  
+
+}
+</script>
 
 <style lang="scss">
 @import '@/scss/variables.scss';
@@ -37,6 +49,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: $--text-color;
 //   &.router-link-exact-active {
 //     color: #42b983;
 //   }
