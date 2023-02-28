@@ -5,27 +5,27 @@
         MySpring Intercâmbio
         </router-link>
 
-        <div class="nav__menu">
+        <div class="nav__menu" ref="menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <router-link to="/" class="nav__link">Home</router-link>
+                    <router-link to="/" class="nav__link" @click.native="close_menu">Home</router-link>
                 </li>
                 <li class="nav__item">
-                    <router-link to="/" class="nav__link">Sobre Nós</router-link>
+                    <router-link to="/sobre-nos" class="nav__link" @click.native="close_menu">Sobre Nós</router-link>
                 </li>
                 <li class="nav__item">
-                    <router-link to="/" class="nav__link">Pathway</router-link>
+                    <router-link to="/pathway" class="nav__link" @click.native="close_menu">Pathway</router-link>
                 </li>
                 <li class="nav__item">
-                    <router-link to="/" class="nav__link">Agenda</router-link>
+                    <router-link to="/agenda" class="nav__link" @click.native="close_menu">Agenda</router-link>
                 </li>
             </ul>
 
-            <i class="ri-close-fill" nav__close></i>
+            <i class="ri-close-fill nav__close" @click="close_menu"></i>
         </div>
 
         <div class="nav__toggle">
-            <i class="ri-menu-line"></i>
+            <i class="ri-function-line" @click="show_menu"></i>
         </div>
         </nav>
     </div>
@@ -33,10 +33,109 @@
 
 <script>
     export default {
-        
+        data() {
+            return {
+                show: false
+            }
+        },
+        methods: {
+            show_menu() {
+                this.$refs.menu.classList.add('show-menu')
+            },
+
+            close_menu() {
+                this.$refs.menu.classList.remove('show-menu')
+            }
+        },
     }
 </script>
 
 <style lang="scss" scoped>
+@import '@/scss/variables.scss';
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $--z-fixed;
+    background-color: $--first-color;
+}
+
+.nav {
+    height: $--header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo, .nav__toggle {
+    color: $--white-color;
+}
+
+.nav__logo {
+    font-weight: $--font-semi-bold;
+}
+
+.nav__toggle {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.nav__menu {
+    position: relative;
+}
+
+.show-menu {
+    right: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu {
+        position: fixed;
+        background-color: $--body-color;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        box-shadow: -1px 0 4px hsla(157, 64%, 15%, .15);
+        padding: 3rem;
+        transition: .4s;
+    }
+
+    .show-menu {
+    right: 0;
+}
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.nav__link {
+    color: $--text-color-light;
+    font-weight: $--font-semi-bold;
+    text-transform: uppercase;
+    transition: .3s;
+
+    &.router-link-exact-active {
+     border-bottom: .150rem solid $--first-color;
+   }
+}
+
+.nav__link:hover {
+    color: $--first-color;
+}
+
+.nav__close {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: $--first-color;
+    cursor: pointer;
+}
 
 </style>

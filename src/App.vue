@@ -49,7 +49,6 @@ ul {
 
 a {
   text-decoration: none;
-  color: $--text-color;
 //   &.router-link-exact-active {
 //     color: #42b983;
 //   }

@@ -2,20 +2,22 @@
 
 $--header-height: 3rem;
 
+// pink: hsl(348, 33%, 50%)
+// blue: hsl(184, 100%, 21%)
 $--hue-clor: 157;
 
 /* hsl color mode */
-$--first-color: hsl(var(--hue-color), 54%, 18%);
-$--fisrt-color-second: hsl(var(--hue-color), 64%, 18%);
-$--first-color-alt: hsl(var(--hue-color), 54%, 15%) ;
-$--title-color: hsl(var(--hue-color), 54%, 22%);
-$--text-color: hsl(var(--hue-color), 24%, 35%);
-$--text-color-light: hsl(var(--hue-color), 8%, 60%);
-$--input-color: hsl(var(--hue-color), 24%, 97%);
-$--body-color: hsl(var(--hue-color), 100%, 99%);
+$--first-color: hsl(157, 54%, 18%);
+$--fisrt-color-second: hsl(157, 64%, 18%);
+$--first-color-alt: hsl(157, 54%, 15%) ;
+$--title-color: hsl(157, 54%, 22%);
+$--text-color: hsl(157, 24%, 35%);
+$--text-color-light: hsl(157, 8%, 60%);
+$--input-color: hsl(157, 24%, 97%);
+$--body-color: hsl(157, 100%, 99%);
 $--white-color: #FFF;
-$--scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-$--scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
+$--scroll-bar-color: hsl(157, 12%, 90%);
+$--scroll-thumb-color: hsl(157, 12%, 75%);
 
 /* font and typography */
 $--body-font: 'Lora', serif;;
