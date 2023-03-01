@@ -33,11 +33,6 @@
 
 <script>
     export default {
-        data() {
-            return {
-                show: false
-            }
-        },
         methods: {
             show_menu() {
                 this.$refs.menu.classList.add('show-menu')

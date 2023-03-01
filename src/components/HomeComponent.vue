@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="home">
+        <img src="@/img/home1.jpg" alt="" class="home__img">
     </div>
 </template>
 
