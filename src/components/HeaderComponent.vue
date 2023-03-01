@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header" ref="header">
         <nav class="nav container">
         <router-link to="/" class="nav__logo">
         MySpring Intercâmbio
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import debounce from "lodash/debounce";
+
     export default {
         methods: {
             show_menu() {
@@ -40,7 +42,26 @@
 
             close_menu() {
                 this.$refs.menu.classList.remove('show-menu')
-            }
+            },
+
+            handleScroll() {
+                if (window.scrollY >= 100) {
+                    this.$refs.header.classList.add("scroll-header");
+                } else {
+                    this.$refs.header.classList.remove("scroll-header");
+                }
+            },
+        },
+
+        beforeDestroy() {
+            // I switched the example from `destroyed` to `beforeDestroy`
+            // to exercise your mind a bit. This lifecycle method works too.
+            window.removeEventListener("scroll", this.handleDebouncedScroll);
+        },
+
+        mounted () {
+            this.handleDebouncedScroll = debounce(this.handleScroll, 100);
+            window.addEventListener("scroll", this.handleDebouncedScroll);
         },
     }
 </script>
@@ -131,6 +152,16 @@
     font-size: 1.5rem;
     color: $--first-color;
     cursor: pointer;
+}
+
+.scroll-header {
+    background-color: $--body-color;
+    box-shadow: 0 0 4px hsla(157, 64%, 15%, .15);
+}
+
+.scroll-header .nav__logo,
+.scroll-header .nav__toggle {
+    color: $--first-color;
 }
 
 </style>
