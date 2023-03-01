@@ -54,7 +54,7 @@
     top: 0;
     left: 0;
     z-index: $--z-fixed;
-    background-color: $--first-color;
+    background-color: transparent;
 }
 
 .nav {
