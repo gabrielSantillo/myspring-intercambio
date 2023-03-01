@@ -2,7 +2,7 @@
     <div class="header" ref="header">
         <nav class="nav container">
         <router-link to="/" class="nav__logo">
-        MySpring Intercâmbio
+        <img src="@/img/logo.png" alt="">
         </router-link>
 
         <div class="nav__menu" ref="menu">
@@ -22,6 +22,10 @@
             </ul>
 
             <i class="ri-close-fill nav__close" @click="close_menu"></i>
+
+            <img src="@/img/whatsapp-icon.png" alt="" class="nav__wpp">
+
+            <img src="@/img/logo-escrito.png" class="nav__company-name">
         </div>
 
         <div class="nav__toggle">
@@ -89,17 +93,23 @@ import debounce from "lodash/debounce";
     color: $--white-color;
 }
 
-.nav__logo {
-    font-weight: $--font-semi-bold;
+.nav__logo img {
+    width: 1.8rem;
 }
 
 .nav__toggle {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     cursor: pointer;
 }
 
 .nav__menu {
     position: relative;
+}
+
+.nav__company-name {
+    position: absolute;
+    margin-top: 100%;
+    width: 50%;
 }
 
 .show-menu {
@@ -154,14 +164,23 @@ import debounce from "lodash/debounce";
     cursor: pointer;
 }
 
+.nav__wpp {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: $--first-color;
+    cursor: pointer;
+}
+
 .scroll-header {
     background-color: $--body-color;
     box-shadow: 0 0 4px hsla(157, 64%, 15%, .15);
 }
 
-.scroll-header .nav__logo,
 .scroll-header .nav__toggle {
     color: $--first-color;
 }
+
 
 </style>

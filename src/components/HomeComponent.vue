@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <img src="@/img/test-home.jpeg" alt="" class="home__img">
+        <img src="@/img/home1.jpeg" alt="" class="home__img">
 
         <div class="home__container container grid">
              <div class="home__data">
@@ -10,6 +10,7 @@
              </div>
 
             <div class="home__social">
+                <a href="#" target="_blank"  class="home__social-link"><i class="ri-whatsapp-fill"></i></a>
                 <a href="#" target="_blank"  class="home__social-link"><i class="ri-facebook-circle-fill"></i></a>
                 <a href="#" target="_blank" class="home__social-link"><i class="ri-instagram-fill"></i></a>
                 <a href="#" target="_blank" class="home__social-link"><i class="ri-youtube-fill"></i></a>
@@ -24,12 +25,12 @@
                 </div>
 
                 <div class="home__info-overlay">
-                    <img src="@/img/test-home-2.jpeg" alt="" class="home__info-img">
+                    <img src="@/img/home2.jpeg" alt="" class="home__info-img">
                 </div>
             </div>
         </div>
 
-        
+
     </div>
 </template>
 
