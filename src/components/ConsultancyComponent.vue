@@ -11,21 +11,21 @@
             <h2 class="section__title container__title">Início</h2>
             <div>
                 <div class="consultancy__card">
-                    <img src="@/img/discover1.jpg" alt="" class="consultancy__img">
+                    <img src="@/img/discover.jpeg" alt="" class="consultancy__img">
                     <div class="consultancy__data">
                         <h2 class="consultancy__title">INGLÊS</h2>
                         <span class="consultancy__description">Qual nível de inglês a ser atingido</span>
                     </div>
                 </div>
                 <div class="consultancy__card">
-                    <img src="@/img/discover2.jpg" alt="" class="consultancy__img">
+                    <img src="@/img/discover2.jpeg" alt="" class="consultancy__img">
                     <div class="consultancy__data">
                         <h2 class="consultancy__title">ORÇAMENTO</h2>
                         <span class="consultancy__description">Orçamento necessário para o projeto</span>
                     </div>
                 </div>
                 <div class="consultancy__card">
-                    <img src="@/img/discover3.jpg" alt="" class="consultancy__img">
+                    <img src="@/img/discover3.jpeg" alt="" class="consultancy__img">
                     <div class="consultancy__data">
                         <h2 class="consultancy__title">FORMAÇÃO</h2>
                         <span class="consultancy__description">Recoloção profissional após a formatura</span>
@@ -33,6 +33,8 @@
                 </div>
             </div>
         </div>
+
+        
     </div>
 </template>
 
@@ -45,14 +47,12 @@
 <style lang="scss" scoped>
 @import '@/scss/variables.scss';
 
-.container__title {
-    margin-top: 2rem;
-}
-
 .consultancy__card {
     position: relative;
     width: 200px;
     overflow: $--img-hidden;
+    margin: auto;
+    margin-bottom: $--mb-2;
 }
 
 .consultancy__data {

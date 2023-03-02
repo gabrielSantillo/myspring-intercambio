@@ -79,7 +79,9 @@ import debounce from "lodash/debounce";
     top: 0;
     left: 0;
     z-index: $--z-fixed;
-    background-color: transparent;
+    background-color: white;
+    background-color: $--body-color;
+    box-shadow: 0 0 4px hsla(157, 64%, 15%, .15);
 }
 
 .nav {
@@ -89,8 +91,8 @@ import debounce from "lodash/debounce";
     align-items: center;
 }
 
-.nav__logo, .nav__toggle {
-    color: $--white-color;
+.nav__toggle {
+    color: $--first-color;
 }
 
 .nav__logo img {
