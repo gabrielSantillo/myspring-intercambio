@@ -19,12 +19,39 @@
 
             <div class="about__img">
                 <div class="about__img-overlay">
-                    <img src="@/img/about1.jpg" alt="" class="about__img-one">
+                    <img src="@/img/about1.jpeg" alt="" class="about__img-one">
                 </div>
 
                 <div class="about__img-overlay">
-                    <img src="@/img/about2.jpg" alt="" class="about__img-two">
+                    <img src="@/img/about2.jpeg" alt="" class="about__img-two">
                 </div>
+            </div>
+
+            <div class="about__data">
+                <h2 class="section__title about__title">
+                    Visão
+                </h2>
+                <p class="about__description">
+                    Mudar destinos
+                </p>
+                <h2 class="section__title about__title">
+                    Missão
+                </h2>
+                <p class="about__description">
+                    Inspirar pessoas a serem protagonistas de suas vidas através da experiência de intercâmbio
+                </p>
+                <h2 class="section__title about__title">
+                    Valores
+                </h2>
+                <p class="about__description">
+                    Doar-se genuinamente ao planejamento do aluno
+                </p>
+                <p class="about__description">
+                    Cultivar a honestidade e a transparência nas relações
+                </p>
+                <p class="about__description">
+                    Sempre andar a "extra mile" por cada cliente, internos ou externos
+                </p>
             </div>
         </div>
     </div>
@@ -37,5 +64,48 @@
 </script>
 
 <style lang="scss" scoped>
+@import '@/scss/variables.scss';
+
+.about__data {
+    text-align: center;
+}
+
+.about__container {
+    row-gap: 2.5rem;
+}
+
+.about__description {
+    margin-bottom: $--mb-2;
+    line-height: 1.5rem;
+}
+
+.about__img {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__img-overlay {
+    overflow: $--img-hidden;
+}
+
+.about__img-one {
+    width: 130px;
+    border-radius: .5rem;
+}
+
+.about__img-two {
+    width: 180px;
+    border-radius: .5rem;
+}
+
+.about__img-one, .about__img-two {
+    transition: $--img-transition;
+}
+
+.about__img-one:hover, .about__img-two:hover {
+    transform: $--img-scale;
+}
 
 </style>

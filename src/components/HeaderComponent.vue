@@ -131,7 +131,7 @@ import debounce from "lodash/debounce";
 
     .show-menu {
     right: 0;
-}
+    }
 }
 
 .nav__list {
