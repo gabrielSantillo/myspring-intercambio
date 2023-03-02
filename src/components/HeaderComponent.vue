@@ -11,7 +11,7 @@
                     <router-link to="/" class="nav__link" @click.native="close_menu">Home</router-link>
                 </li>
                 <li class="nav__item">
-                    <router-link to="/sobre-nos" class="nav__link" @click.native="close_menu">Sobre Nós</router-link>
+                    <router-link to="/consultoria" class="nav__link" @click.native="close_menu">Consultoria</router-link>
                 </li>
                 <li class="nav__item">
                     <router-link to="/pathway" class="nav__link" @click.native="close_menu">Pathway</router-link>
