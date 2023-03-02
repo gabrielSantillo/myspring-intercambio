@@ -18,15 +18,12 @@
             </div>
         </div>
 
-        <consultancy-time-line-component></consultancy-time-line-component>
         
     </div>
 </template>
 
 <script>
-import ConsultancyTimeLineComponent from './ConsultancyTimeLineComponent.vue'
     export default {
-  components: { ConsultancyTimeLineComponent },
         
     }
 </script>
