@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import ConsultancyComponent from '@/components/ConsultancyComponent.vue'
-import ConsultancyPlanningComponent from '@/components/ConsultancyPlanComponent.vue'
+import ConsultancyComponent from '@/components/Consultancy/ConsultancyComponent.vue'
+import ConsultancyPlanningComponent from '@/components/Consultancy/ConsultancyPlanComponent.vue'
     export default {
   components: { ConsultancyComponent, ConsultancyPlanningComponent },
         
