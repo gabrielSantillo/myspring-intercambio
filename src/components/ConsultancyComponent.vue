@@ -8,7 +8,7 @@
         </p>
 
         <div class="consultancy__container container">
-            <h2 class="section__title">Início</h2>
+            <h2 class="section__title container__title">Início</h2>
             <div>
                 <div class="consultancy__card">
                     <img src="@/img/discover1.jpg" alt="" class="consultancy__img">
@@ -45,6 +45,10 @@
 <style lang="scss" scoped>
 @import '@/scss/variables.scss';
 
+.container__title {
+    margin-top: 2rem;
+}
+
 .consultancy__card {
     position: relative;
     width: 200px;
@@ -73,6 +77,8 @@
 
 .consultancy__img {
     transition: $--img-transition;
+    filter: brightness(70%);
+    border-radius: .5rem;
 }
 
 .consultancy__img:hover {
