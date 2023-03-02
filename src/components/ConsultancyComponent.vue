@@ -28,7 +28,7 @@
                     <img src="@/img/discover3.jpeg" alt="" class="consultancy__img">
                     <div class="consultancy__data">
                         <h2 class="consultancy__title">FORMAÇÃO</h2>
-                        <span class="consultancy__description">Recoloção profissional após a formatura</span>
+                        <span class="consultancy__description">Recolocação profissional após a formatura</span>
                     </div>
                 </div>
             </div>

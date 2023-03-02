@@ -1,16 +1,16 @@
 <template>
   <div class="home">
     <home-component></home-component>
-    <test-com></test-com>
+    <about-component></about-component>
   </div>
 </template>
 
 <script>
 import HomeComponent from '@/components/HomeComponent.vue'
-import TestCom from '@/components/AboutComponent.vue'
+import AboutComponent from '@/components/AboutComponent.vue'
 
 export default {
-  components: { HomeComponent, TestCom },
+  components: { HomeComponent, AboutComponent },
 
 }
 </script>
