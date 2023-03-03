@@ -43,6 +43,10 @@ h1, h2, h3 {
   font-family: $--title-font;
 }
 
+p {
+  line-height: 1.5rem;
+}
+
 ul {
   list-style: none;
 }
