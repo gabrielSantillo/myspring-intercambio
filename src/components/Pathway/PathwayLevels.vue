@@ -7,12 +7,12 @@
             <div class="pathway__level-leveling-description container">
 
                 <p>Todos os alunos fazem um teste antes de iniciar suas aulas, e o resultado serve para nivelar esse estudante em uma turma de acordo com seu nível acadêmico. Os alunos de nível básico e intermediário  iniciam obrigatoriamente nas turmas de General English, e quando atingem o nível avançado (Level 10), podem optar pelo Academic English ou o Preparatório de IELTS</p>
-
+                <div class="topics">
                 <p>GENERAL ENGLISH:  nível básico ao proficiente (Level 1 a 17)</p>
-
                 <p>ACADEMIC ENGLISH: nível básico ao proficiente (Level 10 a 17 = Pw1 a Pw3)</p>
-
                 <p>PREPARATÓRIO IELTS: nível básico ao proficiente (Level 10 a 17)</p>
+                </div>
+
             </div>
         </div>
 
@@ -61,6 +61,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.topics {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
 }
 
 .button {

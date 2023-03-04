@@ -111,11 +111,16 @@
   justify-content: center;
   row-gap: 24px;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 4px hsla(157, 54%, 18%, .25);
+  box-shadow: 0 2px 4px hsla(348, 54%, 18%, .25);
   padding: 1.5rem;
   margin: 0 16px;
   text-align: center;
   height: 180px;
+  transition: .3s;
+}
+
+.pathway__content-card:hover {
+    box-shadow: 0 2px 4px hsla(184, 54%, 18%, .35);
 }
 
 .pathway__video {
