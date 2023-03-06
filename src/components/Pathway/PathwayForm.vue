@@ -39,8 +39,18 @@
 
           <div>
             <label for="" class="form__label">Provincia</label>
-            <select>
-              <option ref="chosen_province" v-for="(province, index) in provinces" :key="index" :value="province">{{province}}</option>
+            <select ref="province">
+              <option value="ab">Alberta</option>
+              <option value="bc">British Columbia</option>
+              <option value="mb">Manitoba</option>
+              <option value="nb">New Brunswick</option>
+              <option value="nl">New Foundland and Labrador</option>
+              <option value="ns">Nova Scotia</option>
+              <option value="on" selected>Ontario</option>
+              <option value="pei">Prince Edward Island</option>
+              <option value="qc">Quebec</option>
+              <option value="sk">Saskatchewan</option>
+              <option value="yt">Yukon</option>
             </select>
           </div>
         </div>
@@ -73,7 +83,7 @@ export default {
     methods: {
         show_colleges() {
             this.show_college_options = true;
-            let province = this.$refs['chosen_province']['value']
+            let province = this.$refs['province'].value
             province
         }
     },
