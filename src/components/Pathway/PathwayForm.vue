@@ -3,135 +3,90 @@
     <form action="" class="subscribe__form">
       <div>
         <h1 class="form__title"><span>ILAC Pathway</span> Calculator</h1>
-        <p class="form__description">Use this calculator to understand how many weeks of English Pathway you will need in order to achieve the level of each College requires.</p><p class="form__description">You can also see the price for the English Pathway based on the weeks you need.</p>
+        <p class="form__description">
+          Use this calculator to understand how many weeks of English Pathway
+          you will need in order to achieve the level of each College requires.
+        </p>
+        <p class="form__description">
+          You can also see the price for the English Pathway based on the weeks
+          you need.
+        </p>
       </div>
 
-      <div>
+      <div class="form__first">
         <div class="form__inputs">
           <div>
-            <label for="" class="form__label">English Level</label>
-            <input
-              type="text"
-              required
-              placeholder="Enter your first name"
-              class="form__input"
-              ref="first_name"
-            />
+            <label for="" class="form__label">Inglês</label>
+            <select required>
+              <option value="1">Level 1</option>
+              <option value="2">Level 2</option>
+              <option value="3">Level 3</option>
+              <option value="4">Level 4</option>
+              <option value="5">Level 5</option>
+              <option value="6">Level 6</option>
+              <option value="7">Level 7</option>
+              <option value="8">Level 8</option>
+              <option value="9">Level 9</option>
+              <option value="10">Level 10</option>
+              <option value="11">Level 11</option>
+              <option value="12">Level 12</option>
+              <option value="13">Level 13</option>
+              <option value="14">Level 14</option>
+              <option value="15">Level 15</option>
+              <option value="16">Level 16</option>
+            </select>
           </div>
 
           <div>
-            <label for="" class="form__label">Last Name</label>
-            <input
-              type="text"
-              required
-              placeholder="Enter your last name"
-              class="form__input"
-              ref="last_name"
-            />
+            <label for="" class="form__label">Provincia</label>
+            <select>
+              <option ref="chosen_province" v-for="(province, index) in provinces" :key="index" :value="province">{{province}}</option>
+            </select>
           </div>
+        </div>
 
-          <div>
-            <label for="" class="form__label">Email</label>
-            <input
-              type="email"
-              required
-              placeholder="Enter Your email address"
-              class="form__input"
-              ref="email"
-            />
-          </div>
+        <button class="form__button" @click="show_colleges">Escolher College</button>
 
-          <div>
-            <label for="" class="form__label">Phone number</label>
-            <input
-              type="number"
-              required
-              placeholder="Enter your phone number"
-              class="form__input"
-              ref="phone_number"
-            />
-          </div>
+        <div>
+            <label for="" class="form__label">College</label>
+            <select >
+                <option v-for="(college, index) in ab" :key="index" :value="college">{{college}}</option>
+            </select>
 
-          <div>
-            <label for="" class="form__label">Budget</label>
-            <input
-              type="number"
-              required
-              placeholder="Enter your budget"
-              class="form__input"
-              ref="budget"
-            />
-          </div>
-          <div>
-            <p class="form__label">Preferable City</p>
-            <div class="form__radio">
-              <div>
-                <input
-                  type="radio"
-                  ref="calgary"
-                  name="city"
-                  value="1"
-                  checked
-                />
-                <label for="calgary">Calgary</label>
-              </div>
-
-              <div>
-                <input type="radio" ref="vancouver" name="city" value="2" />
-                <label for="vancouver">Vancouver</label>
-              </div>
-
-              <div>
-                <input type="radio" ref="toronto" name="city" value="3" />
-                <label for="toronto">Toronto</label>
-              </div>
-            </div>
-          </div>
+            <button class="form__button form__button-calculate" @click="calculate">Calcular</button>
         </div>
       </div>
 
-      <div class="form__buttons" v-scroll-reveal.reset="{ delay: 850 }">
-        <button class="form__button" @click="subscribe">Subscribe</button>
-      </div>
     </form>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            provinces: ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'New Foundland and Labrador', 'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Yukon'],
+            show_college_options: false,
+            ab: ['Bow Valley College', 'Concordia University of Edmonton', 'MacEwan University', 'Northern Alberta Institute of Technology', 'Olds College', 'Red Dear Polytechnic', 'Southern Alberta Institute of Technology']
+        }
+    },
+    methods: {
+        show_colleges() {
+            this.show_college_options = true;
+            let province = this.$refs['chosen_province']['value']
+            province
+        }
+    },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
-
-.form {
-  background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%);
-}
-
-.form__content,
-.subscribe__form,
-.form__inputs {
-  display: grid;
-}
-
-.form__content {
-  position: relative;
-  align-items: center;
-}
-
-.form__img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+@import "@/scss/variables.scss";
 
 .subscribe__form {
-  position: relative;
-  margin-inline: 1.5rem;
-  row-gap: 1.25rem;
-  border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 }
 
 .form__title {
@@ -144,73 +99,37 @@ export default {};
   color: red;
 }
 
-.form__description {
-  font-size: $--small-font-size;
+.form__first {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 }
 
 .form__inputs {
-  row-gap: 0.75rem;
-  margin-bottom: 0.5rem;
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
 }
 
 .form__label {
   display: block;
   color: $--first-color;
-  font-size: $--small-font-size;
   font-weight: $--font-semi-bold;
   margin-bottom: 0.25rem;
 }
 
-.form__input {
-  width: 100%;
-  padding: 10px 8px;
-  border-radius: 4px;
-  border: 2px solid $--first-color;
-  color: #000;
-  font-size: $--smaller-font-size;
-  font-weight: $--font-medium;
-  transition: border 0.4s;
-}
-
-.form__input:focus,
-.form__input:valid {
-  border: 2px solid $--first-color;
-}
-
-.form__radio {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: space-between;
-
-  > div {
-    display: grid;
-    grid-auto-flow: column;
-
-    > input {
-      margin-right: 2px;
-    }
-  }
-}
-
 .form__button {
-  display: grid;
-}
-
-.form__button {
+    max-width: 160px;
   padding: 14px 1rem;
   border-radius: 6px;
-  background: linear-gradient(76deg, $--first-color, $--first-color-alt);
+  background: $--first-color;
   color: #fff;
-  font-size: $--small-font-size;
   font-weight: $--font-semi-bold;
-  box-shadow: 0 6px 24px hsla(157, 66%, 53%, 0.5);
   transition: 0.3s;
   cursor: pointer;
 }
 
-.form__button:hover {
-  box-shadow: 0 6px 24px hsla(157, 66%, 53%, 0.8);
+.form__button-calculate {
+    margin-top: 2rem;
 }
-
 </style>
