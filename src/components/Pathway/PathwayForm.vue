@@ -18,7 +18,7 @@
           <div>
             <label for="" class="form__label">Inglês</label>
             <select v-model="level" class="form__select">
-              <option value="1">Level 1</option>
+              <option value="1" >Level 1</option>
               <option value="2">Level 2</option>
               <option value="3">Level 3</option>
               <option value="4">Level 4</option>
@@ -77,7 +77,7 @@
             <p class="form__price-card-description">College: {{`${college}`}}</p>
             <p class="form__price-card-description">Semanas: {{`${weeks}`}}</p>
             <p class="form__price-card-description">Total: CAD$ {{`${tuition}`}}</p>
-            <button class="button form__button form__button-price">Mais Informações</button>
+            <a href="https://api.whatsapp.com/send?phone=15878880975&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exigo. Gostaria de mais informações!" class="button form__button form__button-price" target="_blank">Mais Informações</a>
         </div>
     </div>
   </div>
@@ -214,10 +214,17 @@ export default {
 
 .form__select {
   height: 28px;
-  background-color: #f1f1f1;
+  background-color: #fafafa;
   border: none;
   border-radius: 6px;
   box-shadow: 0 1px 6px #ddd;
   margin-top: .5rem;
+  transition: .5s;
+}
+
+.form__select:hover {
+  box-shadow: 0 1px 6px hsla(157, 54%, 18%, .3);
+  background-color: #fff;
+  cursor: pointer;
 }
 </style>
