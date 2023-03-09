@@ -6,7 +6,7 @@
         Checklist personalizado das atividades necessárias em cada fase do
         planejamento, organizado de forma clara objetiva.
       </p>
-      <img src="@/img/experience1.jpg" alt="" class="plan__img">
+      <img src="@/img/checklist.webp" alt="" class="plan__img">
     </div>
   </div>
 </template>
@@ -19,6 +19,6 @@ export default {};
 .plan__container {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 3rem;
 }
 </style>
