@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ConsultancyView from '@/views/ConsultancyView.vue'
 import PathwayView from '@/views/PathwayView.vue'
+import AgendaView from '@/views/AgendaView.vue'
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,11 @@ const routes = [
   {
     path: '/pathway',
     component: PathwayView
+  },
+
+  {
+    path: '/agenda',
+    component: AgendaView
   },
 ]
 
