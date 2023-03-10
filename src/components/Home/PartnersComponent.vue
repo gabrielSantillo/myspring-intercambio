@@ -2,11 +2,9 @@
   <div class="partner section">
     <h2 class="container partner__title">Nossos Parceiros</h2>
     <div class="container partner__accordion">
-      <div class="partner__accordion-item">
+      <div class="partner__accordion-item" @click="is_active_one = !is_active_one">
         <div
-          class="partner__accordion-header"
-          ref="one"
-          @click="is_active_one = !is_active_one"
+          class="partner__accordion-header"          
         >
           <i class="bx bxs-shield-x partner__accordion-icon"></i>
           <h3 class="partner__accordion-title">Escolas</h3>
@@ -24,11 +22,9 @@
         </div>
       </div>
 
-    <div class="partner__accordion-item">
+    <div class="partner__accordion-item" @click="is_active_two = !is_active_two">
         <div
-          class="partner__accordion-header"
-          ref="one"
-          @click="is_active_two = !is_active_two"
+          class="partner__accordion-header"          
         >
           <i class="bx bxs-shield-x partner__accordion-icon"></i>
           <h3 class="partner__accordion-title">Colleges Privados</h3>
@@ -46,11 +42,9 @@
         </div>
     </div>
 
-    <div class="partner__accordion-item">
+    <div class="partner__accordion-item" @click="is_active_three = !is_active_three">
         <div
           class="partner__accordion-header"
-          ref="one"
-          @click="is_active_three = !is_active_three"
         >
           <i class="bx bxs-shield-x partner__accordion-icon"></i>
           <h3 class="partner__accordion-title">Colleges Públicos</h3>
@@ -131,9 +125,9 @@ export default {
 }
 
 .partner__accordion-header {
-    display: flex;
+display: flex;
   align-items: center;
-  justify-content: space-around;;
+  justify-content: space-around;
 }
 
 .partner__accordion-arrow {
@@ -148,7 +142,11 @@ export default {
   transition: 0.3s;
 }
 
-.partner__accordion-img {
+.partner__accordion-content {
     margin-top: 2rem;
+    display: grid;
+    place-items: center;
+    row-gap: 3rem;
 }
+
 </style>
