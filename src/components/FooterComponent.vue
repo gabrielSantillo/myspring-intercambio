@@ -92,7 +92,6 @@
 
 <style lang="scss" scoped>
 @import "@/scss/variables.scss";
-
 .footer__container {
     row-gap: 5rem;
 }
