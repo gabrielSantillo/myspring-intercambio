@@ -7,7 +7,7 @@
                     </h3>
                     <p class="footer__description">Nós temos a inspiração <br> e experiência para <br> te guiar nessa jornada.</p>
 
-                    <div>
+                    <div class="footer_socials">
                         <a href="" target="_blank" class="footer__social"><i class="ri-whatsapp-fill"></i></a>
                         <a href="" target="_blank" class="footer__social"><i class="ri-instagram-fill"></i></a>
                         <a href="" target="_blank" class="footer__social"><i class="ri-youtube-fill"></i></a>
@@ -91,5 +91,83 @@
 </script>
 
 <style lang="scss" scoped>
+@import "@/scss/variables.scss";
+
+.footer__container {
+    row-gap: 5rem;
+}
+
+.footer__content {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    row-gap: 2rem;
+}
+
+
+.footer__title, .footer__subtitle {
+    font-size: $--h3-font-size;
+}
+
+.footer__title {
+    margin-bottom: $--mb-0-5;
+}
+
+.footer__description {
+    margin-bottom: $--mb-2;
+}
+
+.footer_socials {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.25rem;
+}
+
+.footer__social {
+    font-size: 1.25rem;
+    color: $--title-color;
+    transition: .4s;
+}
+
+.footer__social:hover {
+    color: $--first-color;
+}
+
+.footer__subtitle {
+    margin-bottom: $--mb-1;
+}
+
+.footer__item {
+    margin-bottom: $--mb-0-75;
+}
+
+.footer__link {
+    color: $--text-color;
+    transition: .4s;
+}
+
+.footer__link:hover {
+    color: $--first-color;
+}
+
+.footer__rights {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    text-align: center;
+}
+
+.footer__copy, .footer__terms-link {
+    font-size: $--small-font-size;
+    color: $--text-color;
+}
+
+.footer__terms {
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: center;
+}
+
+.footer__terms-link:hover {
+    text-decoration: underline;
+}
 
 </style>
