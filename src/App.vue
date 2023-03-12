@@ -12,8 +12,6 @@ import FooterComponent from './components/FooterComponent.vue'
 import HeaderComponent from './components/HeaderComponent.vue'
 export default {
   components: { HeaderComponent, FooterComponent },
-
-
   
 }
 </script>
@@ -95,18 +93,15 @@ input {
     --smaller-font-size: .813rem;
   }
 }
-
 /* Scroll bar */
 ::-webkit-scrollbar {
   width: 0.6rem;
   background-color: $--scroll-bar-color;
 }
-
 ::-webkit-scrollbar-thumb {
   background-color: $--scroll-thumb-color;
   border-radius: .5rem;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background-color: $--text-color-light;
 }
