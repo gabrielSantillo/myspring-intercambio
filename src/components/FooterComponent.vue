@@ -76,7 +76,8 @@
             <div class="footer__rights">
                 <p class="footer__copy">&#169; 2023 MySpring Intercâmbio. Todos os direitos reservados.</p>
                 <div class="footer__terms">
-                    <a href="#" class="footer__terms-link">Terms & Agreements</a>
+                    <button @click="test" class="footer__terms-link">Terms & Agreements</button>
+                    <popup-term></popup-term>
                     <a href="#" class="footer__terms-link">Política de Privacidade</a>
                 </div>
             </div>
@@ -85,8 +86,14 @@
 </template>
 
 <script>
+import PopupTerm from './Popup/PopupTerm.vue'
     export default {
-        
+  components: { PopupTerm },
+        methods: {
+            test() {
+                this.$root.$emit(`alert`, true)
+            }
+        },
     }
 </script>
 
@@ -157,6 +164,7 @@
 .footer__copy, .footer__terms-link {
     font-size: $--small-font-size;
     color: $--text-color;
+    background-color: #fff;
 }
 
 .footer__terms {
