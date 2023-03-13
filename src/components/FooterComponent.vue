@@ -11,22 +11,22 @@
           </p>
 
           <div class="footer_socials">
-            <a href="" target="_blank" class="footer__social"
+            <a href="https://api.whatsapp.com/message/YXZXOPXHRFMSB1?autoload=1&app_absent=0" target="_blank" class="footer__social"
               ><i class="ri-whatsapp-fill"></i
             ></a>
-            <a href="" target="_blank" class="footer__social"
+            <a href="https://www.instagram.com/myspringintercambio/" target="_blank" class="footer__social"
               ><i class="ri-instagram-fill"></i
             ></a>
-            <a href="" target="_blank" class="footer__social"
+            <a href="https://www.youtube.com/c/MySpringIntercambio" target="_blank" class="footer__social"
               ><i class="ri-youtube-fill"></i
             ></a>
-            <a href="" target="_blank" class="footer__social"
+            <a href="https://www.facebook.com/myspringintercambiopage" target="_blank" class="footer__social"
               ><i class="ri-facebook-circle-fill"></i
             ></a>
-            <a href="" target="_blank" class="footer__social"
+            <a href="https://www.linkedin.com/company/myspring-intercambio/" target="_blank" class="footer__social"
               ><i class="ri-linkedin-box-fill"></i
             ></a>
-            <a href="" target="_blank" class="footer__social"
+            <a href="mailto:contato@myspringintercambio.com" target="_blank" class="footer__social"
               ><i class="ri-mail-fill"></i
             ></a>
           </div>
