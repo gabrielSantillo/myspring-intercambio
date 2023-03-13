@@ -6,7 +6,7 @@
              <div class="home__data">
                 <h1 class="home__data-title">Sua melhor <br> experiência de <br>
                 intercâmbio <br> começa aqui</h1>
-                <a href="#" class="button">Agendar Consulta</a>
+                <router-link to="/agenda" class="button">Agendar Consulta</router-link>
              </div>
 
             <div class="home__social">
@@ -14,19 +14,6 @@
                 <a href="#" target="_blank"  class="home__social-link"><i class="ri-facebook-circle-fill"></i></a>
                 <a href="#" target="_blank" class="home__social-link"><i class="ri-instagram-fill"></i></a>
                 <a href="#" target="_blank" class="home__social-link"><i class="ri-youtube-fill"></i></a>
-            </div>
-
-            <div class="home__info">
-                <div>
-                    <span class="home__info-title">5 best places to visit</span>
-                    <a href="#" class="button button--flex button--link home__info-button">
-                        More <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
-
-                <div class="home__info-overlay">
-                    <img src="@/img/home2.jpeg" alt="" class="home__info-img">
-                </div>
             </div>
         </div>
 
