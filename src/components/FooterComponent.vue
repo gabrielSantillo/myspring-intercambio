@@ -92,7 +92,7 @@
           &#169; 2023 MySpring Intercâmbio. Todos os direitos reservados.
         </p>
         <div class="footer__terms">
-          <button @click="test" class="footer__terms-link">
+          <button @click="popup" class="footer__terms-link">
             Política de Privacidade
           </button>
           <popup-component></popup-component>
@@ -112,7 +112,7 @@ export default {
   },
   components: { PopupComponent },
   methods: {
-    test() {
+    popup() {
       this.$root.$emit(`alert`, this.message);
     },
   },

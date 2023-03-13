@@ -38,61 +38,27 @@
       <h2 class="agenda__content-title">Agendamentos</h2>
 
       <div class="agenda__content-cards">
-        <div class="agenda__content-card">
-          <p class="agenda__content-card-title">Consulta 25 minutos</p>
-          <p class="agenda__content-card-price">CAD$ 25</p>
-          <p class="agenda__content-card-description">
-            Tire suas dúvidas sobre intercâmbio no Canadá
-          </p>
-          <a href="#" class="agenda__content-card-more">Mais informações</a>
-          <div class="line"></div>
-          <a
-            href="https://agendamentosmyspringintercambio.as.me/schedule.php?calendarID=5567721"
-            target="_blank"
-            class="agenda__content-card-button"
-            >Agendar</a
-          >
-        </div>
+        <agenda-twenty-component></agenda-twenty-component>
 
-        <div class="agenda__content-card">
-          <p class="agenda__content-card-title">Consulta 50 minutos</p>
-          <p class="agenda__content-card-price">CAD$ 50</p>
-          <p class="agenda__content-card-description">
-            Tire suas dúvidas sobre intercâmbio no Canadá: valores, linha do
-            tempo...
-          </p>
-          <a href="#" class="agenda__content-card-more">Mais informações</a>
-          <div class="line"></div>
-          <a
-            href="https://agendamentosmyspringintercambio.as.me/?calendarID=4775749"
-            target="_blank"
-            class="agenda__content-card-button"
-            >Agendar</a
-          >
-        </div>
+        <agenda-fifty-component></agenda-fifty-component>
 
-        <div class="agenda__content-card">
-          <p class="agenda__content-card-title">Consultoria de Intercâmbio</p>
-          <p class="agenda__content-card-price">CAD$ 200</p>
-          <p class="agenda__content-card-description">
-            Consultoria especializada para fins de imigração | Contrato válido para 12 meses
-          </p>
-          <a href="#" class="agenda__content-card-more">Mais informações</a>
-          <div class="line"></div>
-          <a
-            href="https://agendamentosmyspringintercambio.as.me/?calendarID=4775749"
-            target="_blank"
-            class="agenda__content-card-button"
-            >Agendar</a
-          >
-        </div>
+        <agenda-contract-component></agenda-contract-component>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import AgendaContractComponent from "./AgendaContractComponent.vue";
+import AgendaFiftyComponent from "./AgendaFiftyComponent.vue";
+import AgendaTwentyComponent from "./AgendaTwentyComponent.vue";
+export default {
+  components: {
+    AgendaTwentyComponent,
+    AgendaFiftyComponent,
+    AgendaContractComponent,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -141,8 +107,11 @@ export default {};
 }
 
 .agenda__content-card-more {
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   color: hsl(157, 64%, 18%);
+  text-align: start;
+  background-color: transparent;
 }
 
 .line {
