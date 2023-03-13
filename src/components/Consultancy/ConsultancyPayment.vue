@@ -14,7 +14,7 @@
         Solicite sua invoice por email <br>
         Assinatura do contrato de prestação de serviçoes via Autentique
         </p>
-        <a href="#" class="button">Solicitar invoice</a>
+        <a href="mailto:natalia@myspringintercambio.com" class="button">Solicitar invoice</a>
     </div>
   </div>
 </template>

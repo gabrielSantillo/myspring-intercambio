@@ -77,7 +77,7 @@
             <p class="form__price-card-description">College: {{`${college}`}}</p>
             <p class="form__price-card-description">Semanas: {{`${weeks}`}}</p>
             <p class="form__price-card-description">Total: CAD$ {{`${tuition}`}}</p>
-            <a href="https://api.whatsapp.com/send?phone=15878880975&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exigo. Gostaria de mais informações!" class="button form__button form__button-price" target="_blank">Mais Informações</a>
+            <a href="https://api.whatsapp.com/send?phone=15878880975&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exige." class="button form__button form__button-price" target="_blank">Mais Informações</a>
         </div>
     </div>
   </div>
