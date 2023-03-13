@@ -113,7 +113,7 @@ export default {
   components: { PopupComponent },
   methods: {
     popup() {
-      this.$root.$emit(`alert`, this.message);
+      this.$root.$emit(`popup`, this.message);
     },
   },
 };

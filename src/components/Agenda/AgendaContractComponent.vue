@@ -6,7 +6,7 @@
       Consultoria especializada para fins de imigração | Contrato válido para 12
       meses
     </p>
-    <a href="#" class="agenda__content-card-more">Mais informações</a>
+    <button @click="popup" class="agenda__content-card-more">Mais informações</button>
     <div class="line"></div>
     <a
       href="https://agendamentosmyspringintercambio.as.me/?calendarID=4775749"
@@ -18,7 +18,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            message: {
+                title: "Descrição da Consultoria de Intercâmbio",
+                content: "O serviço de consultoria vai te ajudar a traçar estratégias para conquistar sua carreira internacional e aumentar suas chances de aplicar para um processo futuro de residência permanente. Contrato de 12 meses, taxa de serviço de CAD$ 200 em pagamento único."
+            }
+        }
+    },
+
+    methods: {
+        popup() {
+            this.$root.$emit(`popup`, this.message);
+        }
+    },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -31,7 +31,7 @@
         </ul>
         <p>
           Para demais assuntos relacionados a planejamento de intercâmbio,
-          agende um horário com o consultor educaional pelo links a seguir.
+          agende um horário com o consultor educacional pelo links a seguir.
         </p>
       </div>
 

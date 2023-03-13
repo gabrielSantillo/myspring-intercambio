@@ -5,7 +5,7 @@
     <p class="agenda__content-card-description">
       Tire suas dúvidas sobre intercâmbio no Canadá: valores, linha do tempo...
     </p>
-    <a href="#" class="agenda__content-card-more">Mais informações</a>
+    <button @click="popup" class="agenda__content-card-more">Mais informações</button>
     <div class="line"></div>
     <a
       href="https://agendamentosmyspringintercambio.as.me/?calendarID=4775749"
@@ -17,7 +17,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            message: {
+                title: "Descrição da Consulta de 50 minutos",
+                content: "Nessa consulta você entenderá os custos do programa de intercâmbio, os valores de comprovação para o visto de estudos, a linha do tempo do processo até o embarque, o nivelamento e estimativa de tempo para estudos do inglês e os valores dos cursos de inglês presencial e online."
+            }
+        }
+    },
+
+    methods: {
+        popup() {
+            this.$root.$emit(`popup`, this.message);
+        }
+    },
+};
 </script>
 
 <style lang="scss" scoped>

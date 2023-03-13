@@ -1,10 +1,13 @@
 <template>
   <div class="popup" ref="popup">
     <div class="popup-inner container" v-if="show">
+      <h3 class="popup__title">
+        {{title}}
+      </h3>
       <p class="popup__description">
-        {{message}}
+        {{content}}
       </p>
-      <button class="popup__close" @click="hide_term">Fechar</button>
+      <button class="popup__close" @click="close_popup">Fechar</button>
     </div>
   </div>
 </template>
@@ -14,24 +17,26 @@ export default {
   data() {
     return {
       show: false,
-      message: ""
+      content: "",
+      title: ""
     };
   },
   methods: {
-    show_term(content) {
+    open_popup(message) {
       this.$refs.popup.classList.add("popup-dark");
       this.show = true;
-      this.message = content
+      this.content = message['content']
+      this.title = message['title']
     },
 
-    hide_term() {
+    close_popup() {
       this.$refs.popup.classList.remove("popup-dark");
       this.show = false;
     },
   },
 
   mounted() {
-    this.$root.$on("alert", this.show_term);
+    this.$root.$on("popup", this.open_popup);
   },
 };
 </script>
@@ -60,7 +65,7 @@ export default {
 
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 1rem;
   align-items: center;
 }
 
@@ -69,6 +74,7 @@ export default {
     padding: .5rem .5rem;
     border-radius: .25rem;
     transition: .4s;
+    margin-top: 1rem;
 }
 
 .popup__close:hover {

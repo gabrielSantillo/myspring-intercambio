@@ -5,7 +5,7 @@
     <p class="agenda__content-card-description">
       Tire suas dúvidas sobre intercâmbio no Canadá
     </p>
-    <button ref="25" @click="popup($event)" class="agenda__content-card-more">
+    <button ref="25" @click="popup" class="agenda__content-card-more">
       Mais informações
     </button>
     <div class="line"></div>
@@ -19,7 +19,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            message: {
+                title: "Descrição da Consulta de 25 minutos",
+                content: "Nessa consulta você entenderá os custos do programa de intercâmbio, os valores de comprovação para o visto de estudos, a linha do tempo do processo até o embarque, o nivelamento e estimativa de tempo para estudos do inglês e os valores dos cursos de inglês presencial e online."
+            }
+        }
+    },
+
+    methods: {
+        popup() {
+            this.$root.$emit(`popup`, this.message);
+        }
+    },
+};
 </script>
 
 <style lang="scss" scoped>
