@@ -23,7 +23,7 @@
 
             <i class="ri-close-fill nav__close" @click="close_menu"></i>
 
-            <img src="@/img/whatsapp-icon.png" alt="" class="nav__wpp">
+            <a href="https://api.whatsapp.com/message/YXZXOPXHRFMSB1?autoload=1&app_absent=0" target="_blank"><img src="@/img/whatsapp-icon.png" alt="" class="nav__wpp"></a>
 
             <img src="@/img/logo-escrito.png" class="nav__company-name">
         </div>
