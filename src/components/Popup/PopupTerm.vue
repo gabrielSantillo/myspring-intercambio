@@ -1,11 +1,8 @@
 <template>
-  <div class="popup popup-dark" ref="popup">
+  <div class="popup" ref="popup">
     <div class="popup-inner container" v-if="show">
       <p class="popup__description">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti
-        nostrum quos non voluptatum dolore nobis itaque distinctio harum?
-        Doloribus tempore repudiandae recusandae aliquid tempora quis saepe eos
-        adipisci necessitatibus autem.
+        {{message}}
       </p>
       <button class="popup__close" @click="hide_term">Fechar</button>
     </div>
@@ -16,14 +13,15 @@
 export default {
   data() {
     return {
-      show: true,
+      show: false,
       message: ""
     };
   },
   methods: {
-    show_term() {
+    show_term(content) {
       this.$refs.popup.classList.add("popup-dark");
       this.show = true;
+      this.message = content
     },
 
     hide_term() {
