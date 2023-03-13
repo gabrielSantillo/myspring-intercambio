@@ -1,5 +1,5 @@
 <template>
-  <div class="popup" ref="popup">
+  <div class="popup popup-dark" ref="popup">
     <div class="popup-inner container" v-if="show">
       <p class="popup__description">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti
@@ -7,7 +7,7 @@
         Doloribus tempore repudiandae recusandae aliquid tempora quis saepe eos
         adipisci necessitatibus autem.
       </p>
-      <button class="popup-close" @click="hide_term">Fechar</button>
+      <button class="popup__close" @click="hide_term">Fechar</button>
     </div>
   </div>
 </template>
@@ -16,7 +16,8 @@
 export default {
   data() {
     return {
-      show: false,
+      show: true,
+      message: ""
     };
   },
   methods: {
@@ -58,5 +59,21 @@ export default {
   padding: 32px;
   background-color: #fff;
   border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  align-items: center;
+}
+
+.popup__close {
+    width: 100px;
+    padding: .5rem .5rem;
+    border-radius: .25rem;
+    transition: .4s;
+}
+
+.popup__close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 </style>

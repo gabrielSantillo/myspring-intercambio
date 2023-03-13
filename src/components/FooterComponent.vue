@@ -76,9 +76,8 @@
             <div class="footer__rights">
                 <p class="footer__copy">&#169; 2023 MySpring Intercâmbio. Todos os direitos reservados.</p>
                 <div class="footer__terms">
-                    <button @click="test" class="footer__terms-link">Terms & Agreements</button>
+                    <button @click="test" class="footer__terms-link">Política de Privacidade</button>
                     <popup-term></popup-term>
-                    <a href="#" class="footer__terms-link">Política de Privacidade</a>
                 </div>
             </div>
         </div>
