@@ -95,7 +95,7 @@
           <button @click="test" class="footer__terms-link">
             Política de Privacidade
           </button>
-          <popup-term></popup-term>
+          <popup-component></popup-component>
         </div>
       </div>
     </div>
@@ -103,14 +103,14 @@
 </template>
 
 <script>
-import PopupTerm from "./Popup/PopupTerm.vue";
+import PopupComponent from "./Popup/PopupComponent.vue";
 export default {
   data() {
     return {
       message: "This is the message for the Privacy Policy",
     };
   },
-  components: { PopupTerm },
+  components: { PopupComponent },
   methods: {
     test() {
       this.$root.$emit(`alert`, this.message);
