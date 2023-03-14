@@ -74,7 +74,7 @@ input {
   margin-bottom: $--mb-2;
 }
 .container {
-  max-width: 968px;
+  // max-width: 968px;
   margin-left: $--mb-1;
   margin-right: $--mb-1;
 }

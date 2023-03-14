@@ -1,5 +1,5 @@
 <template>
-    <div class="about section">
+    <div class="about">
         <div class="about__container container grid">
             <div class="about__data">
                 <h2 class="section__title about__title">
@@ -27,31 +27,40 @@
                 </div>
             </div>
 
-            <div class="about__data">
-                <h2 class="section__title about__title">
+            <div class="about__data-items">
+                <div class="about__data-item-one">
+                    <h2 class="about__data-title">
                     Visão
                 </h2>
                 <p class="about__description">
                     Mudar destinos
                 </p>
-                <h2 class="section__title about__title">
-                    Missão
-                </h2>
-                <p class="about__description">
-                    Inspirar pessoas a serem protagonistas de suas vidas através da experiência de intercâmbio
-                </p>
-                <h2 class="section__title about__title">
-                    Valores
-                </h2>
-                <p class="about__description">
-                    Doar-se genuinamente ao planejamento do aluno
-                </p>
-                <p class="about__description">
-                    Cultivar a honestidade e a transparência nas relações
-                </p>
-                <p class="about__description">
-                    Sempre andar a "extra mile" por cada cliente, internos ou externos
-                </p>
+                </div>
+
+                <div class="about__data-item-two">
+                    <h2 class="about__data-title">
+                        Missão
+                    </h2>
+                    <p class="about__description">
+                        Inspirar pessoas a serem protagonistas de suas vidas através da experiência de intercâmbio
+                    </p>
+                </div>
+
+                <div class="about__data-item">
+                    <h2 class="about__data-title">
+                        Valores
+                    </h2>
+                    <p class="about__description">
+                        Doar-se genuinamente ao planejamento do aluno
+                    </p>
+                    <p class="about__description">
+                        Cultivar a honestidade e a transparência nas relações
+                    </p>
+                    <p class="about__description">
+                        Sempre andar a "extra mile" por cada cliente, internos ou externos
+                    </p>
+                </div>
+
             </div>
         </div>
     </div>
@@ -66,7 +75,7 @@
 <style lang="scss" scoped>
 @import '@/scss/variables.scss';
 
-.about__data {
+.about__data, .about__data-items {
     text-align: center;
 }
 
@@ -84,6 +93,10 @@
     column-gap: 1rem;
     align-items: center;
     justify-content: center;
+}
+
+.about__data-title {
+    margin-bottom: .5rem;
 }
 
 .about__img-overlay {
@@ -106,6 +119,26 @@
 
 .about__img-one:hover, .about__img-two:hover {
     transform: $--img-scale;
+}
+
+@media screen and (min-width: 768px) { 
+    .about__data-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+    }
+
+    .about__data-item-one {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .about__data-item-two {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
 }
 
 </style>

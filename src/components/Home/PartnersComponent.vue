@@ -110,6 +110,7 @@ export default {
 .partner__accordion {
   display: grid;
   row-gap: 1.5rem;
+  align-items: center;
 }
 
 .partner__accordion-item {
@@ -147,6 +148,13 @@ display: flex;
     display: grid;
     place-items: center;
     row-gap: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .partner__accordion-item {
+    width: 500px;
+    justify-self: center;
+  }
 }
 
 </style>

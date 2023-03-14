@@ -167,4 +167,23 @@ export default {};
 .button--link:hover {
   background: none;
 }
+
+@media screen and (min-width: 768px) {
+  .home__container {
+    height: 100vh;
+  }
+
+  .home__data {
+    margin-top: 10rem;
+  }
+
+  .home__social {
+    flex-direction: row;
+    column-gap: 2.5rem;
+  }
+
+  .home__social-link {
+    font-size: 1.6rem;
+  }
+}
 </style>
