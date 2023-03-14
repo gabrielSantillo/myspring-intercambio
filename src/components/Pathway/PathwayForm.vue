@@ -1,5 +1,5 @@
 <template>
-  <div class="section container">
+  <div class="pathway__form section container">
     <form action="" class="subscribe__form">
       <div>
         <h1 class="form__title"><span>ILAC Pathway</span> Calculator</h1>
@@ -18,7 +18,7 @@
           <div>
             <label for="" class="form__label">Inglês</label>
             <select v-model="level" class="form__select">
-              <option value="1" >Level 1</option>
+              <option value="1">Level 1</option>
               <option value="2">Level 2</option>
               <option value="3">Level 3</option>
               <option value="4">Level 4</option>
@@ -44,7 +44,9 @@
               <option value="British Columbia">British Columbia</option>
               <option value="Manitoba">Manitoba</option>
               <option value="New Brunswick">New Brunswick</option>
-              <option value="New Foundland and Labrador">New Foundland and Labrador</option>
+              <option value="New Foundland and Labrador">
+                New Foundland and Labrador
+              </option>
               <option value="Nova Scotia">Nova Scotia</option>
               <option value="Ontario">Ontario</option>
               <option value="Prince Edward Island">Prince Edward Island</option>
@@ -55,72 +57,129 @@
           </div>
         </div>
 
-        <button class="form__button" @click="show_colleges">Escolher College</button>
+        <button class="form__button" @click="show_colleges">
+          Escolher College
+        </button>
 
         <div v-if="show_college_options" class="form__college">
-            <div>
-                <label for="" class="form__label">College</label>
-                <select v-model="college" class="form__select">
-                    <option v-for="(college, index) in colleges" :key="index" :value="college">{{college}}</option>
-                </select>
-            </div>
+          <div>
+            <label for="" class="form__label">College</label>
+            <select v-model="college" class="form__select">
+              <option
+                v-for="(college, index) in colleges"
+                :key="index"
+                :value="college"
+              >
+                {{ college }}
+              </option>
+            </select>
+          </div>
         </div>
       </div>
 
-      <button v-if="show_college_options" class="button form__button" @click="calculate">Calcular</button>
+      <button
+        v-if="show_college_options"
+        class="button form__button"
+        @click="calculate"
+      >
+        Calcular
+      </button>
     </form>
 
     <div class="form__price" v-if="show_result">
-        <div class="form__price-card">
-            <h3 class="form__price-card-title">Orçamento</h3>
-            <p class="form__price-card-description">Provincia: {{`${province}`}}</p>
-            <p class="form__price-card-description">College: {{`${college}`}}</p>
-            <p class="form__price-card-description">Semanas: {{`${weeks}`}}</p>
-            <p class="form__price-card-description">Total: CAD$ {{`${tuition}`}}</p>
-            <a href="https://api.whatsapp.com/send?phone=15878880975&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exige." class="button form__button form__button-price" target="_blank">Mais Informações</a>
-        </div>
+      <div class="form__price-card">
+        <h3 class="form__price-card-title">Orçamento</h3>
+        <p class="form__price-card-description">
+          Provincia: {{ `${province}` }}
+        </p>
+        <p class="form__price-card-description">College: {{ `${college}` }}</p>
+        <p class="form__price-card-description">Semanas: {{ `${weeks}` }}</p>
+        <p class="form__price-card-description">
+          Total: CAD$ {{ `${tuition}` }}
+        </p>
+        <a
+          href="https://api.whatsapp.com/send?phone=15878880975&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exige."
+          class="button form__button form__button-price"
+          target="_blank"
+          >Mais Informações</a
+        >
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            tuition: 0,
-            weeks: 0,
-            level: '',
-            province: '',
-            college: '',
-            colleges: ['Bow Valley College', 'Concordia University of Edmonton', 'MacEwan University', 'Northern Alberta Institute of Technology', 'Olds College', 'Red Dear Polytechnic', 'Southern Alberta Institute of Technology'],
-            provinces: ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'New Foundland and Labrador', 'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Yukon'],
-            show_college_options: false,
-            show_result: false,
+  data() {
+    return {
+      tuition: 0,
+      weeks: 0,
+      level: "",
+      province: "",
+      college: "",
+      colleges: [
+        "Bow Valley College",
+        "Concordia University of Edmonton",
+        "MacEwan University",
+        "Northern Alberta Institute of Technology",
+        "Olds College",
+        "Red Dear Polytechnic",
+        "Southern Alberta Institute of Technology",
+      ],
+      provinces: [
+        "Alberta",
+        "British Columbia",
+        "Manitoba",
+        "New Brunswick",
+        "New Foundland and Labrador",
+        "Nova Scotia",
+        "Ontario",
+        "Prince Edward Island",
+        "Quebec",
+        "Saskatchewan",
+        "Yukon",
+      ],
+      show_college_options: false,
+      show_result: false,
 
-            ab: ['Bow Valley College', 'Concordia University of Edmonton', 'MacEwan University', 'Northern Alberta Institute of Technology', 'Olds College', 'Red Dear Polytechnic', 'Southern Alberta Institute of Technology'],
-            mb: ['Assiniboine Community College', 'International College of Manibota', 'Manibota Institute of Trades and Technology', 'Red River College', 'University of Winnipeg Professional, Applied and Continuing Education']
-        }
+      ab: [
+        "Bow Valley College",
+        "Concordia University of Edmonton",
+        "MacEwan University",
+        "Northern Alberta Institute of Technology",
+        "Olds College",
+        "Red Dear Polytechnic",
+        "Southern Alberta Institute of Technology",
+      ],
+      mb: [
+        "Assiniboine Community College",
+        "International College of Manibota",
+        "Manibota Institute of Trades and Technology",
+        "Red River College",
+        "University of Winnipeg Professional, Applied and Continuing Education",
+      ],
+    };
+  },
+  methods: {
+    show_colleges() {
+      this.show_college_options = true;
     },
-    methods: {
-        show_colleges() {
-            this.show_college_options = true;
-        },
 
-        calculate() {
-            let num_level = parseInt(this.level)
-            let week_fee = 120
-            let reg_fee = 110
-            let material_fee = 10
-            let final_level = 17
-            
-            this.weeks = (final_level - (num_level - 1)) * 2 //each level means 2 weeks of study
+    calculate() {
+      let num_level = parseInt(this.level);
+      let week_fee = 120;
+      let reg_fee = 110;
+      let material_fee = 10;
+      let final_level = 17;
 
-            this.tuition = (this.weeks * week_fee) + (this.weeks * material_fee) + reg_fee
+      this.weeks = (final_level - (num_level - 1)) * 2; //each level means 2 weeks of study
 
-            this.show_result = true
+      this.tuition =
+        this.weeks * week_fee + this.weeks * material_fee + reg_fee;
 
-        }
+      this.show_result = true;
     },
+  },
 };
 </script>
 
@@ -128,9 +187,9 @@ export default {
 @import "@/scss/variables.scss";
 
 .subscribe__form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
 
 .form__title {
@@ -144,9 +203,9 @@ export default {
 }
 
 .form__first {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
 
 .form__inputs {
@@ -163,7 +222,7 @@ export default {
 }
 
 .form__button {
-    max-width: 160px;
+  max-width: 160px;
   padding: 14px 1rem;
   border-radius: 6px;
   background: $--first-color;
@@ -174,42 +233,42 @@ export default {
 }
 
 .form__button-calculate {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .form__college {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
 
 .form__input-radio {
-    display: flex;
-    align-items: center;
-    
-    column-gap: .5rem;
+  display: flex;
+  align-items: center;
+
+  column-gap: 0.5rem;
 }
 
 .form__price {
-    display: grid;
-    margin-top: 2rem;
+  display: grid;
+  margin-top: 2rem;
 }
 
 .form__price-card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px hsla(348, 54%, 18%, .25);
-    padding: 1.5rem 5rem 1.5rem 1.5rem;
-    transition: .3s;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px hsla(348, 54%, 18%, 0.25);
+  padding: 1.5rem 5rem 1.5rem 1.5rem;
+  transition: 0.3s;
 }
 
 .form__price-card-title {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .form__button-price {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .form__select {
@@ -218,13 +277,42 @@ export default {
   border: none;
   border-radius: 6px;
   box-shadow: 0 1px 6px #ddd;
-  margin-top: .5rem;
-  transition: .5s;
+  margin-top: 0.5rem;
+  transition: 0.5s;
 }
 
 .form__select:hover {
-  box-shadow: 0 1px 6px hsla(157, 54%, 18%, .3);
+  box-shadow: 0 1px 6px hsla(157, 54%, 18%, 0.3);
   background-color: #fff;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .pathway__form {
+    text-align: center;
+  }
+
+  .subscribe__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form__first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form__price {
+    align-items: center;
+  }
+
+  .form__price-card {
+    padding: 1.5rem;
+    width: 500px;
+    justify-self: center;
+    align-items: center;
+  }
 }
 </style>

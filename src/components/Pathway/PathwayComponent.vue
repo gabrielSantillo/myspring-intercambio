@@ -167,6 +167,10 @@ export default {};
 }
 
 @media screen and (min-width: 768px) {
+    .pathway {
+        text-align: center;
+    }
+
   .pathway__video {
     margin-top: 64px;
 

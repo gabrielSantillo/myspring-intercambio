@@ -129,4 +129,11 @@ export default {};
 .pathway__level-academic-description-bold {
   font-weight: bold;
 }
+
+@media screen and (min-width: 768px) {
+  .pathway__level {
+    text-align: center;
+    row-gap: 0;
+  }
+}
 </style>

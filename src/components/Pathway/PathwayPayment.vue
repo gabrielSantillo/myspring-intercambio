@@ -70,4 +70,14 @@
 .pathway__payment-card:hover {
     box-shadow: 0 2px 4px hsla(184, 54%, 18%, .35);
 }
+
+@media screen and (min-width: 768px) {
+    .pathway__payment {
+        text-align: center;
+    }
+
+    .pathway__payment-card {
+        width: 500px;
+    }
+}
 </style>
