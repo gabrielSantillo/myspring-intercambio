@@ -55,25 +55,25 @@
       </div>
 
       <div class="pathway__content-cards">
-        <div class="pathway__content-card">
+        <div class="pathway__content-card left">
           <h3 class="pathway__content-card-title">Aulas ao vivo</h3>
           <p class="pathway__content-card-description">
             Professores nativos, em tempo real pela plataforma Zoom
           </p>
         </div>
-        <div class="pathway__content-card">
+        <div class="pathway__content-card right">
           <h3 class="pathway__content-card-title">3 Horas por dia</h3>
           <p class="pathway__content-card-description">
             Aulas de segunda a sexta deira, total de 15 horas por semana
           </p>
         </div>
-        <div class="pathway__content-card">
+        <div class="pathway__content-card left">
           <h3 class="pathway__content-card-title">Turmas pequenas</h3>
           <p class="pathway__content-card-description">
             Classe de 15 a20 alunos, com estudantes do mundo todo
           </p>
         </div>
-        <div class="pathway__content-card">
+        <div class="pathway__content-card right">
           <h3 class="pathway__content-card-title">Portal Digital</h3>
           <p class="pathway__content-card-description">
             Plataforma de ensino digital com atividades e livros didáticos
@@ -178,6 +178,20 @@ export default {};
       width: 500px;
       height: 300px;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) { 
+  .pathway__content-cards {
+    justify-content: normal;
+  }
+
+  .left {
+    justify-self: start;
+  }
+
+  .right {
+    justify-self: end;
   }
 }
 </style>
