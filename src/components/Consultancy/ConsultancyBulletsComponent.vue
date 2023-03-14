@@ -34,4 +34,10 @@
     text-align-last: center;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .plan__container {
+    text-align: center;
+  }
+}
 </style>
