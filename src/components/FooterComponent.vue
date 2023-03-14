@@ -200,4 +200,10 @@ export default {
     justify-content: space-between;
   }
 }
+
+@media screen and (min-width: 1112px) {
+  .footer__content {
+    justify-items: center;
+  }
+}
 </style>
