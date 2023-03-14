@@ -149,6 +149,7 @@ export default {};
   text-align: center;
   height: 180px;
   transition: 0.3s;
+  background-color: hsla(157, 16%, 92%, 0.6);
 }
 
 .pathway__content-card:hover {
@@ -184,6 +185,8 @@ export default {};
 @media screen and (min-width: 1024px) { 
   .pathway__content-cards {
     justify-content: normal;
+    padding-right: 7rem;
+    padding-left: 7rem;
   }
 
   .left {

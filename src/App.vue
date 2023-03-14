@@ -74,7 +74,7 @@ input {
   margin-bottom: $--mb-2;
 }
 .container {
-  max-width: 968px;
+  // max-width: 968px;
   margin-left: $--mb-1;
   margin-right: $--mb-1;
 }
@@ -129,5 +129,13 @@ input {
     margin-left: 5rem;
     margin-right: 5rem;
   }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
 }
 </style>

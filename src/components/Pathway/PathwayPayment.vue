@@ -83,6 +83,7 @@ export default {};
   text-align: center;
   height: 180px;
   transition: 0.3s;
+  background-color: hsla(157, 16%, 92%, 0.6);
 }
 
 .pathway__payment-card:hover {
