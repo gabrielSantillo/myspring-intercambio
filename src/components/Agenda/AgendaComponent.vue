@@ -96,44 +96,11 @@ export default {
   flex-direction: column;
 }
 
-.agenda__content-card-title,
-.agenda__content-card-price {
-  font-weight: $--font-semi-bold;
-  font-size: $--h2-font-size;
+@media screen and (min-width: 768px) {
+  .agenda__content-description {
+    align-items: center;
+    text-align: center;
+  }
 }
 
-.agenda__content-card-price {
-  margin-bottom: 1rem;
-}
-
-.agenda__content-card-more {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  color: hsl(157, 64%, 18%);
-  text-align: start;
-  background-color: transparent;
-}
-
-.line {
-  width: 100%;
-  height: 0.025rem;
-  background-color: rgb(193, 214, 205);
-  margin-bottom: 1.5rem;
-}
-
-.agenda__content-card-button {
-  background-color: $--first-color;
-  color: $--white-color;
-  padding: 1rem 2rem;
-  font-weight: $--font-semi-bold;
-  transition: 0.3s;
-  border-radius: 0.5rem;
-  width: 120px;
-  height: 50px;
-  text-align: center;
-}
-
-.agenda__content-card-button:hover {
-  background-color: hsl(157, 24%, 35%);
-}
 </style>

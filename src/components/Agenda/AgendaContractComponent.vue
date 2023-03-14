@@ -88,4 +88,12 @@ export default {
 .agenda__content-card-button:hover {
   background-color: hsl(157, 24%, 35%);
 }
+
+@media screen and (min-width: 768px) {
+  .agenda__content-card {
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+  }
+}
 </style>
