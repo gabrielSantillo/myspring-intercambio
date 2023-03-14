@@ -1,6 +1,6 @@
 <template>
     <div class="header" ref="header">
-        <nav class="nav container">
+        <nav class="nav">
         <router-link to="/" class="nav__logo">
         <img src="@/img/logo.png" alt="">
         </router-link>
@@ -89,6 +89,8 @@ import debounce from "lodash/debounce";
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .nav__toggle {

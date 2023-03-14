@@ -105,4 +105,12 @@ input {
 ::-webkit-scrollbar-thumb:hover {
   background-color: $--text-color-light;
 }
+
+/* Media queries for medium devices */
+@media screen and (min-width: 568px) {
+  .container {
+    margin-left: 2rem;
+    margin: 2rem;
+  }
+}
 </style>
