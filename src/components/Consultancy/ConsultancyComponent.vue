@@ -1,14 +1,17 @@
 <template>
   <div class="consultancy section">
-    <h2 class="section__title">
-      Planejamento de intercâmbio <br />
-      para fins de imigração
-    </h2>
-    <p class="section__description container">
-      O serviço de consultoria vai te ajudar a traçar estratégias para
-      conquistar sua carreira internacional e aumentar suas chances de aplicar
-      para um processo futuro de residência permanente.
-    </p>
+    <div class="consultancy__intro container">
+      <h2 class="section__title">
+        Planejamento de intercâmbio <br />
+        para fins de imigração
+      </h2>
+      <p class="section__description">
+        O serviço de consultoria vai te ajudar a traçar estratégias para
+        conquistar sua carreira internacional e aumentar suas chances de aplicar
+        para um processo futuro de residência permanente.
+      </p>
+    </div>
+
     <h2 class="section__title container__title">Início</h2>
     <div class="consultancy__container container">
       <div class="consultancy__card">
@@ -90,13 +93,16 @@ export default {};
 }
 
 @media screen and (min-width: 768px) {
+  .consultancy__intro {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 0;
+    }
+
   .consultancy__container {
     display: grid;
     grid-auto-flow: column;
-  }
-
-  .consultancy__card {
-    display: gris;
   }
 }
 </style>

@@ -28,4 +28,10 @@
     flex-direction: column;
     row-gap: 1rem;
 }
+
+@media screen and (min-width: 768px) {
+  .plan__list {
+    text-align-last: center;
+  }
+}
 </style>

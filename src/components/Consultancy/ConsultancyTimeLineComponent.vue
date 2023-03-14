@@ -21,4 +21,10 @@ export default {};
     flex-direction: column;
     row-gap: 3rem;
 }
+
+@media screen and (min-width: 768px) {
+  .plan__container {
+    text-align: center;
+  }
+}
 </style>
