@@ -193,4 +193,11 @@ export default {
 .footer__terms-link:hover {
   text-decoration: underline;
 }
+
+@media screen and (min-width: 768px) {
+  .footer__rights {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 </style>

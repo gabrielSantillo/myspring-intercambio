@@ -123,4 +123,11 @@ input {
     padding: 7rem 0 2rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 </style>
