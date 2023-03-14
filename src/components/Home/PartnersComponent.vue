@@ -2,7 +2,7 @@
   <div class="partner section">
     <h2 class="container partner__title">Nossos Parceiros</h2>
     <div class="container partner__accordion">
-      <div class="partner__accordion-item" @click="is_active_one = !is_active_one">
+      <div class="partner__accordion-item item-one" @click="is_active_one = !is_active_one">
         <div
           class="partner__accordion-header"          
         >
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="partner__accordion-item" @click="is_active_three = !is_active_three">
+    <div class="partner__accordion-item item-three" @click="is_active_three = !is_active_three">
         <div
           class="partner__accordion-header"
         >
@@ -158,9 +158,16 @@ display: flex;
 }
 
 @media screen and (min-width: 1024px) {
-  .partner__accordion {
-    display: flex;
-    column-gap: 1rem;
+    .partner__accordion-item {
+    width: 350px;
+    }
+
+  .item-one {
+    justify-self: start;
+  }
+
+  .item-three {
+    justify-self: end;
   }
 }
 
