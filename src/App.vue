@@ -113,4 +113,14 @@ input {
     margin: 2rem;
   }
 }
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  .section {
+    padding: 7rem 0 2rem;
+  }
+}
 </style>
