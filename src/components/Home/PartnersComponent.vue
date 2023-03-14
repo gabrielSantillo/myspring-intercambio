@@ -157,4 +157,11 @@ display: flex;
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .partner__accordion {
+    display: flex;
+    column-gap: 1rem;
+  }
+}
+
 </style>

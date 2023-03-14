@@ -186,4 +186,10 @@ export default {};
     font-size: 1.6rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .home__container {
+    grid-template-rows: 2fr .5fr;
+  }
+}
 </style>

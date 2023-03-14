@@ -126,8 +126,8 @@ input {
 
 @media screen and (min-width: 1024px) {
   .container {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 }
 </style>
