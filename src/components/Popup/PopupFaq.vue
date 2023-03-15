@@ -113,15 +113,4 @@ export default {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-// @media screen and (min-width: 1200px) { 
-//   .popup__card {
-//     flex-direction: row;
-//     column-gap: 3rem;
-//   }
-
-//   .popup__cards {
-//     padding-right: 1rem;
-//     padding-left: 1rem;
-//   }
-// }
 </style>

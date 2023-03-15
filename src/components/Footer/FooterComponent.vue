@@ -73,7 +73,7 @@
 
           <ul>
             <li class="footer__item">
-              <button name="faq" @click="popup($event)" class="footer__link">FAQs</button>
+              <footer-faq></footer-faq>
             </li>
 
             <li class="footer__item">
@@ -103,7 +103,8 @@
 </template>
 
 <script>
-import PopupComponent from "./Popup/PopupComponent.vue";
+import PopupComponent from "../Popup/PopupComponent.vue";
+import FooterFaq from './FooterFaq.vue';
 export default {
   data() {
     return {
@@ -123,7 +124,7 @@ export default {
       }
     };
   },
-  components: { PopupComponent },
+  components: { PopupComponent, FooterFaq },
   methods: {
     popup(event) {
       if(event.currentTarget['name'] === 'about-us') {
