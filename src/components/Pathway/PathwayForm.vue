@@ -2,14 +2,14 @@
   <div class="pathway__form section container">
     <form action="" class="subscribe__form">
       <div>
-        <h1 class="form__title"><span>ILAC Pathway</span> Calculator</h1>
+        <h1 class="form__title"><span>ILAC Pathway</span> Calculadora</h1>
         <p class="form__description">
-          Use this calculator to understand how many weeks of English Pathway
-          you will need in order to achieve the level of each College requires.
+          Use esta calculadora para entender quantas semanas de English Pathway
+          você precisará para atingir o nível exigido por cada college.
         </p>
         <p class="form__description">
-          You can also see the price for the English Pathway based on the weeks
-          you need.
+          Você também pode ver o preço do English Pathway com base nas semanas
+          você precisa.
         </p>
       </div>
 

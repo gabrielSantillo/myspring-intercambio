@@ -183,6 +183,10 @@ export default {};
 }
 
 @media screen and (min-width: 1024px) { 
+  .pathway__img {
+    width: 150px;
+  }
+
   .pathway__content-cards {
     justify-content: normal;
     padding-right: 7rem;
@@ -196,5 +200,14 @@ export default {};
   .right {
     justify-self: end;
   }
+
+  .pathway__video {
+    >   iframe {
+          width: 700px;
+      height: 400px;
+  }
+  }
+
+
 }
 </style>
