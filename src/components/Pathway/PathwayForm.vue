@@ -98,7 +98,7 @@
           Total: CAD$ {{ `${tuition}` }}
         </p>
         <a
-          href="https://api.whatsapp.com/send?phone=15878880975&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exige."
+          href="https://api.whatsapp.com/send?phone=5519992137096&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exige."
           class="button form__button form__button-price"
           target="_blank"
           >Mais Informações</a

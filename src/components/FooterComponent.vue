@@ -37,15 +37,15 @@
 
           <ul>
             <li class="footer__item">
-              <a href="#" class="footer__link">Sobre Nós</a>
+              <button name="about-us" @click="popup($event)" class="footer__link">Sobre Nós</button>
             </li>
 
             <li class="footer__item">
-              <a href="#" class="footer__link">Consultoria</a>
+              <router-link to='/consultoria' class="footer__link">Consultoria</router-link>
             </li>
 
             <li class="footer__item">
-              <a href="#" class="footer__link">Pathway</a>
+              <router-link to='/pathway' class="footer__link">Pathway</router-link>
             </li>
           </ul>
         </div>
@@ -55,15 +55,15 @@
 
           <ul>
             <li class="footer__item">
-              <a href="#" class="footer__link">Time</a>
+              <button name="team" @click="popup($event)" class="footer__link">Time</button>
             </li>
 
             <li class="footer__item">
-              <a href="#" class="footer__link">Orçamento</a>
+              <a href="https://api.whatsapp.com/send?phone=5519992137096&text=Olá! Gostaria de um orçamento." target="_blank" class="footer__link">Orçamento</a>
             </li>
 
             <li class="footer__item">
-              <a href="#" class="footer__link">Agenda</a>
+              <router-link to='/agenda' class="footer__link">Agenda</router-link>
             </li>
           </ul>
         </div>
@@ -77,7 +77,7 @@
             </li>
 
             <li class="footer__item">
-              <a href="#" class="footer__link">Support Center</a>
+              <a href="#" class="footer__link">WhatssApp</a>
             </li>
 
             <li class="footer__item">
@@ -107,13 +107,28 @@ import PopupComponent from "./Popup/PopupComponent.vue";
 export default {
   data() {
     return {
-      message: "This is the message for the Privacy Policy",
+      about_us: {
+        title: 'Sobre Nós',
+        content: "A MySpring Intercâmbio surgiu como uma agência digital dentro de um nicho muito específico que é o intercâmbio para fins de imigração. Países como o Canadá e a Alemanha promovem programas de facilitação imigratória através do estudo e do trabalho, em busca de profissionais capacitados com interesse em estabelecerem-se no país. É justamente nesse cenário que surge a necessidade de uma prestação de serviço mais voltada para o planejamento de estudo e carreiras nesse tipo de viagem. Atuando há mais de 5 anos nesse mercado de intercâmbio para fins de imigração, a consultora Natália Fernandes desenvolveu uma metodologia para atender centenas de clientes que precisam de auxílio na análise do perfil profissional, e na escolha do curso certo na cidade certa. Pensando em como beneficiar a carreira desse cliente no exterior, e em como facilitar seu processo de imigração futuro, foi desenvolvido o serviço de consultoria educacional, que acompanha o cliente em todas as fases do processo até o embarque e início das aulas. A experiência de estudos no exterior, ou mesmo o plano de viver definitivamente fora do Brasil é algo muito grandioso e gera muita ansiedade nas pessoas. Eu já passei por todas as etapas, sei exatamente como ajudar o cliente a lidar com esses sentimentos ao longo do processo mostrando o caminho mais seguro. Tenho muita alegria em poder contribuir com minhas experiências e conhecimentos, e uma imensa gratidão em poder cuidar do projeto de cada cliente que confia no meu trabalho. Cada planejamento é único."
+      },
+      team: {
+        title: 'Natalia Fernandes',
+        content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam voluptatibus ab quibusdam reprehenderit nulla impedit exercitationem eaque tempore sequi quis consectetur ratione, ea incidunt culpa deserunt? Corporis accusantium labore quo?',
+        title_two: 'Gabriel Santillo',
+        content_two: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam voluptatibus ab quibusdam reprehenderit nulla impedit exercitationem eaque tempore sequi quis consectetur ratione, ea incidunt culpa deserunt? Corporis accusantium labore quo?'
+      }
     };
   },
   components: { PopupComponent },
   methods: {
-    popup() {
-      this.$root.$emit(`popup`, this.message);
+    popup(event) {
+      if(event.currentTarget['name'] === 'about-us') {
+        this.$root.$emit(`popup`, this.about_us);
+      } else if(event.currentTarget['name'] === 'team') {
+        this.$root.$emit(`popup`, this.team);
+      }
+      
+      
     },
   },
 };
@@ -170,6 +185,7 @@ export default {
 .footer__link {
   color: $--text-color;
   transition: 0.4s;
+  background-color: transparent;
 }
 
 .footer__link:hover {

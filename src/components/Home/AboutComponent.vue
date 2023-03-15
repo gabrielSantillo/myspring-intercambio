@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about section">
     <div class="about__container container grid">
       <div class="about__data">
         <h2 class="section__title about__title">

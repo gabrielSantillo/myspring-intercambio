@@ -105,6 +105,10 @@ export default {};
   margin-bottom: $--mb-2;
 }
 
+.pathway__content {
+  margin-top: 2rem;
+}
+
 .pathway__content-school {
   margin-bottom: 2rem;
 }

@@ -1,12 +1,26 @@
 <template>
   <div class="popup" ref="popup">
     <div class="popup-inner container" v-if="show">
-      <h3 class="popup__title">
-        {{title}}
-      </h3>
-      <p class="popup__description">
-        {{content}}
-      </p>
+      <div class="popup__card">
+        <div class="popup__cards">
+          <h3 class="popup__title">
+            {{ title }}
+          </h3>
+          <p class="popup__description">
+            {{ content }}
+          </p>
+        </div>
+
+        <div class="popup__cards">
+          <h3 class="popup__title">
+            {{ title_two }}
+          </h3>
+          <p class="popup__description">
+            {{ content_two }}
+          </p>
+        </div>
+      </div>
+
       <button class="popup__close" @click="close_popup">Fechar</button>
     </div>
   </div>
@@ -17,16 +31,20 @@ export default {
   data() {
     return {
       show: false,
+      title: "",
       content: "",
-      title: ""
+      title_two: "",
+      content_two: "",
     };
   },
   methods: {
     open_popup(message) {
       this.$refs.popup.classList.add("popup-dark");
       this.show = true;
-      this.content = message['content']
-      this.title = message['title']
+      this.title = message["title"];
+      this.content = message["content"];
+      this.title_two = message["title_two"];
+      this.content_two = message["content_two"];
     },
 
     close_popup() {
@@ -63,6 +81,18 @@ export default {
   background-color: #fff;
   border-radius: 0.5rem;
 
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.popup__card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+}
+
+.popup__cards {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -70,14 +100,26 @@ export default {
 }
 
 .popup__close {
-    width: 100px;
-    padding: .5rem .5rem;
-    border-radius: .25rem;
-    transition: .4s;
-    margin-top: 1rem;
+  width: 100px;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: 0.4s;
+  margin-top: 2rem;
 }
 
 .popup__close:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 1200px) { 
+  .popup__card {
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+
+  .popup__cards {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
 }
 </style>
