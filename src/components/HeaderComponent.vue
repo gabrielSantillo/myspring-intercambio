@@ -159,6 +159,7 @@ export default {
 
   &.router-link-exact-active {
     border-bottom: 0.15rem solid $--first-color;
+    color: $--first-color;
   }
 }
 
