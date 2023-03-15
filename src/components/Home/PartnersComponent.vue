@@ -2,10 +2,8 @@
   <div class="partner section">
     <h2 class="container partner__title">Nossos Parceiros</h2>
     <div class="container partner__accordion">
-      <div class="partner__accordion-item item-one" @click="is_active_one = !is_active_one">
-        <div
-          class="partner__accordion-header"          
-        >
+      <div class="partner__accordion-item item-one" @click="show_schools">
+        <div class="partner__accordion-header">
           <i class="bx bxs-shield-x partner__accordion-icon"></i>
           <h3 class="partner__accordion-title">Escolas</h3>
           <div class="partner__accordion-arrow">
@@ -15,17 +13,34 @@
         </div>
 
         <div class="partner__accordion-content" v-if="is_active_one">
-          <img src="@/img/partner-ilac.webp" alt="" class="partner__accordion-img" />
-          <img src="@/img/partner-sgic.webp" alt="" class="partner__accordion-img" />
-          <img src="@/img/partner-hansa.webp" alt="" class="partner__accordion-img" />
-          <img src="@/img/partner-edu-inter.webp" alt="" class="partner__accordion-img" />
+          <img
+            src="@/img/partner-ilac.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-sgic.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-hansa.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-edu-inter.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
         </div>
       </div>
 
-    <div class="partner__accordion-item" @click="is_active_two = !is_active_two">
-        <div
-          class="partner__accordion-header"          
-        >
+      <div
+        class="partner__accordion-item"
+        @click="show_private"
+      >
+        <div class="partner__accordion-header">
           <i class="bx bxs-shield-x partner__accordion-icon"></i>
           <h3 class="partner__accordion-title">Colleges Privados</h3>
           <div class="partner__accordion-arrow">
@@ -35,17 +50,34 @@
         </div>
 
         <div class="partner__accordion-content" v-if="is_active_two">
-          <img src="@/img/partner-ilac-college.webp" alt="" class="partner__accordion-img" />
-          <img src="@/img/partner-ciccc.webp" alt="" class="partner__accordion-img" />
-          <img src="@/img/partner-cctb.webp" alt="" class="partner__accordion-img" />
-          <img src="@/img/partner-tsom.webp" alt="" class="partner__accordion-img" />
+          <img
+            src="@/img/partner-ilac-college.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-ciccc.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-cctb.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-tsom.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
         </div>
-    </div>
+      </div>
 
-    <div class="partner__accordion-item item-three" @click="is_active_three = !is_active_three">
-        <div
-          class="partner__accordion-header"
-        >
+      <div
+        class="partner__accordion-item item-three"
+        @click="show_public"
+      >
+        <div class="partner__accordion-header">
           <i class="bx bxs-shield-x partner__accordion-icon"></i>
           <h3 class="partner__accordion-title">Colleges Públicos</h3>
           <div class="partner__accordion-arrow">
@@ -55,27 +87,111 @@
         </div>
 
         <div class="partner__accordion-content" v-if="is_active_three">
-            <img src="@/img/partner-alexander.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-bow-valley.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-cdi.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-centennial.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-conestoga.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-douglas.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-fanshawe.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-george-brown.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-georgian.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-humber.webp" alt="" class="partner__accordion-img" />  
-            <img src="@/img/partner-lambton.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-langara.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-lasalle.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-lester-b-pearson.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-nbcc.webp" alt="" class="partner__accordion-img" /> 
-            <img src="@/img/partner-niagara.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-olds.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-sait.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-sault.webp" alt="" class="partner__accordion-img" />
-            <img src="@/img/partner-seneca.webp" alt="" class="partner__accordion-img" />  
-            <img src="@/img/partner-ucw.webp" alt="" class="partner__accordion-img" />        
+          <img
+            src="@/img/partner-alexander.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-bow-valley.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-cdi.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-centennial.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-conestoga.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-douglas.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-fanshawe.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-george-brown.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-georgian.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-humber.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-lambton.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-langara.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-lasalle.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-lester-b-pearson.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-nbcc.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-niagara.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-olds.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-sait.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-sault.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-seneca.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
+          <img
+            src="@/img/partner-ucw.webp"
+            alt=""
+            class="partner__accordion-img"
+          />
         </div>
       </div>
     </div>
@@ -84,11 +200,30 @@
 
 <script>
 export default {
+  methods: {
+    show_schools() {
+      this.is_active_one = !this.is_active_one;
+      this.is_active_two = false;
+      this.is_active_three = false;
+    },
+
+    show_private() {
+      this.is_active_two = !this.is_active_two;
+      this.is_active_one = false;
+      this.is_active_three = false;
+    },
+
+    show_public() {
+      this.is_active_three = !this.is_active_three;
+      this.is_active_two = false;
+      this.is_active_one = false;
+    },
+  },
   data() {
     return {
       is_active_one: false,
       is_active_two: false,
-      is_active_three: false
+      is_active_three: false,
     };
   },
 };
@@ -98,13 +233,13 @@ export default {
 @import "@/scss/variables.scss";
 
 .partner {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .partner__title {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .partner__accordion {
@@ -114,19 +249,19 @@ export default {
 }
 
 .partner__accordion-item {
-  box-shadow: 0 2px 4px hsla(157, 54%, 18%, .25);
+  box-shadow: 0 2px 4px hsla(157, 54%, 18%, 0.25);
   border-radius: 0.5rem;
   padding: 1rem 0.75rem;
-  transition: .4s;
+  transition: 0.4s;
   cursor: pointer;
 }
 
 .partner__accordion-item:hover {
-    box-shadow: 0 2px 4px hsla(157, 54%, 18%, .35);
+  box-shadow: 0 2px 4px hsla(157, 54%, 18%, 0.35);
 }
 
 .partner__accordion-header {
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: space-around;
 }
@@ -144,10 +279,10 @@ display: flex;
 }
 
 .partner__accordion-content {
-    margin-top: 2rem;
-    display: grid;
-    place-items: center;
-    row-gap: 3rem;
+  margin-top: 2rem;
+  display: grid;
+  place-items: center;
+  row-gap: 3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -158,9 +293,9 @@ display: flex;
 }
 
 @media screen and (min-width: 1024px) {
-    .partner__accordion-item {
+  .partner__accordion-item {
     width: 350px;
-    }
+  }
 
   .item-one {
     justify-self: start;
@@ -170,5 +305,4 @@ display: flex;
     justify-self: end;
   }
 }
-
 </style>
