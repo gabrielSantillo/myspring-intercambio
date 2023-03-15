@@ -9,6 +9,7 @@
           <p class="popup__description">
             {{ content }}
           </p>
+          
         </div>
 
         <div class="popup__cards">
@@ -45,6 +46,7 @@ export default {
       this.content = message["content"];
       this.title_two = message["title_two"];
       this.content_two = message["content_two"];
+      
     },
 
     close_popup() {

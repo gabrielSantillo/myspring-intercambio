@@ -73,15 +73,15 @@
 
           <ul>
             <li class="footer__item">
-              <a href="#" class="footer__link">FAQs</a>
+              <button name="faq" @click="popup($event)" class="footer__link">FAQs</button>
             </li>
 
             <li class="footer__item">
-              <a href="#" class="footer__link">WhatssApp</a>
+              <a href="https://api.whatsapp.com/message/YXZXOPXHRFMSB1?autoload=1&app_absent=0" target="_blank" class="footer__link">WhatssApp</a>
             </li>
 
             <li class="footer__item">
-              <a href="#" class="footer__link">Contato</a>
+              <a href="mailto:contato@myspringintercambio.com" class="footer__link">Contato</a>
             </li>
           </ul>
         </div>
@@ -116,6 +116,10 @@ export default {
         content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam voluptatibus ab quibusdam reprehenderit nulla impedit exercitationem eaque tempore sequi quis consectetur ratione, ea incidunt culpa deserunt? Corporis accusantium labore quo?',
         title_two: 'Gabriel Santillo',
         content_two: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam voluptatibus ab quibusdam reprehenderit nulla impedit exercitationem eaque tempore sequi quis consectetur ratione, ea incidunt culpa deserunt? Corporis accusantium labore quo?'
+      },
+      faq: {
+        title: "Envie sua dúvida através do nosso e-mail.",
+        content: "contato@myspringintercambio.com"
       }
     };
   },
@@ -126,6 +130,8 @@ export default {
         this.$root.$emit(`popup`, this.about_us);
       } else if(event.currentTarget['name'] === 'team') {
         this.$root.$emit(`popup`, this.team);
+      } else if (event.currentTarget['name'] === 'faq') {
+        this.$root.$emit(`popup`, this.faq);
       }
       
       
