@@ -176,9 +176,6 @@ export default {};
     height: 100vh;
   }
 
-  .home__data {
-    margin-top: 10rem;
-  }
 
   .home__social {
     flex-direction: row;
@@ -191,10 +188,6 @@ export default {};
 }
 
 @media screen and (min-width: 1024px) {
-  .home__container {
-    grid-template-rows: 2fr 0.5fr;
-  }
-
   .home__data-title {
     font-size: 4rem;
   }

@@ -5,7 +5,7 @@
         <img src="@/img/logo.png" alt="" />
       </router-link>
 
-    <router-link to="/" class="nav__logo-written">
+      <router-link to="/" class="nav__logo-written">
         <img src="@/img/logo-escrito.png" alt="" />
       </router-link>
 
@@ -61,7 +61,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    show_menu() {
+      this.$refs.menu.classList.add("show-menu");
+    },
+    close_menu() {
+      this.$refs.menu.classList.remove("show-menu");
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -96,7 +105,7 @@ export default {};
 }
 
 .nav__logo-written {
-    display: none;
+  display: none;
 }
 
 .nav__toggle {
@@ -198,7 +207,10 @@ export default {};
     column-gap: 1rem;
   }
 
-  .nav__wpp, .nav__company-name, .nav__close, .nav__toggle {
+  .nav__wpp,
+  .nav__company-name,
+  .nav__close,
+  .nav__toggle {
     display: none;
   }
 
