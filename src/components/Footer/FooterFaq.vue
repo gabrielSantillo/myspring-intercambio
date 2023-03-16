@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     popup() {
-        this.$root.$emit(`popup-faq`, this.faq);
+        this.$root.$emit(`popup`, this.faq);
     },
   },
 };
