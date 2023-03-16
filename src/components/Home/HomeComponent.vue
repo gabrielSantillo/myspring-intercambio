@@ -153,7 +153,7 @@ export default {};
 }
 
 .button:hover {
-  background-color: $--first-color-alt;
+  background-color: hsl(157, 24%, 35%);
 }
 
 .button--flex {

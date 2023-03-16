@@ -232,6 +232,10 @@ export default {
   cursor: pointer;
 }
 
+.form__button:hover {
+  box-shadow: 4px 8px 8px hsla(157, 12%, 90%, 1);
+}
+
 .form__button-calculate {
   margin-top: 2rem;
 }

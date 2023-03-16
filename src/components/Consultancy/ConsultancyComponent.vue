@@ -66,6 +66,10 @@ export default {};
   left: 1rem;
 }
 
+.container__title {
+  margin-top: 2rem;
+}
+
 .consultancy__title,
 .consultancy__description {
   color: $--white-color;
