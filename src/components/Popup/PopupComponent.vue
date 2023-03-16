@@ -2,7 +2,7 @@
   <div class="popup" ref="popup">
     <div class="popup-inner container" v-if="show">
       <div class="popup__card">
-        <div class="popup__cards">
+        <div class="popup__cards" ref="about_us_popup" v-if="about_us">
           <h3 class="popup__title">
             {{ title }}
           </h3>
@@ -11,7 +11,7 @@
           </p>
         </div>
 
-        <div class="popup__cards" ref="faq">
+        <div class="popup__cards" ref="faq" v-if="faq">
           <div class="popup__cards">
             <h3 class="popup__title">
               {{ question_one }}
@@ -103,7 +103,7 @@
           </div>
         </div>
 
-        <div class="popup__card-team">
+        <div class="popup__card-team" v-if="team">
           <div class="popup__cards-team">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -180,9 +180,16 @@ export default {
       this.$refs.popup.classList.add("popup-dark");
       this.show = true;
 
+      if (message["about_us"]) {
+        this.about_us = true;
+        this.faq = false;
+        this.team = false;
         this.title = message["title"];
         this.content = message["content"];
-
+      } else if (message["faq"]) {
+        this.about_us = false;
+        this.faq = true;
+        this.team = false;
         this.question_one = message["question_one"];
         this.answer_one = message["answer_one"];
         this.question_two = message["question_two"];
@@ -203,12 +210,15 @@ export default {
         this.answer_nine = message["answer_nine"];
         this.question_ten = message["question_ten"];
         this.answer_ten = message["answer_ten"];
-
-
-      this.name = message["name"];
-      this.name_two = message["name_two"];
-      this.description = message["description"];
-      this.description_two = message["description_two"];
+      } else if (message["team"]) {
+        this.about_us = true;
+        this.faq = false;
+        this.team = true;
+        this.name = message["name"];
+        this.name_two = message["name_two"];
+        this.description = message["description"];
+        this.description_two = message["description_two"];
+      }
     },
 
     close_popup() {
@@ -261,6 +271,10 @@ export default {
   flex-direction: column;
   row-gap: 1rem;
   align-items: center;
+}
+
+.display-none {
+  display: none;
 }
 
 .popup__cards-faq {
