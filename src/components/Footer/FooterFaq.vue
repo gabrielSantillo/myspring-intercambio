@@ -29,6 +29,7 @@ export default {
         answer_nine: "Resposta",
         question_ten: "Pergunta",
         answer_ten: "Resposta",
+        faq: true
       }
     };
   },

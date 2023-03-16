@@ -2,7 +2,7 @@
   <div class="popup" ref="popup">
     <div class="popup-inner container" v-if="show">
       <div class="popup__card">
-        <div class="popup__cards">
+        <div class="popup__cards" v-if="about_us">
           <h3 class="popup__title">
             {{ title }}
           </h3>
@@ -11,105 +11,123 @@
           </p>
         </div>
 
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ title_two }}
-          </h3>
-          <p class="popup__description">
-            {{ content_two }}
-          </p>
-        </div>
-      </div>
+        <div class="popup__card" name="faq">
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_one }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_one }}
+            </p>
+          </div>
 
-      <div class="popup__card" name="faq">
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_one }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_one }}
-          </p>
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_two }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_two }}
+            </p>
+          </div>
+
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_three }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_three }}
+            </p>
+          </div>
+
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_four }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_four }}
+            </p>
+          </div>
+
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_five }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_five }}
+            </p>
+          </div>
+
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_six }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_six }}
+            </p>
+          </div>
+
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_seven }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_seven }}
+            </p>
+          </div>
+
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_eight }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_eight }}
+            </p>
+          </div>
+
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_nine }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_nine }}
+            </p>
+          </div>
+
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ question_ten }}
+            </h3>
+            <p class="popup__description">
+              {{ answer_ten }}
+            </p>
+          </div>
         </div>
 
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_two }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_two }}
-          </p>
-        </div>
+        <div class="popup__card-team" v-if="team">
+          <div class="popup__cards-team">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill="#A4D233"
+                d="M54.1,-45.9C64.1,-30.5,62.2,-8.4,54.3,6.9C46.4,22.2,32.6,30.7,19,35.9C5.3,41,-8.2,43,-20,38.5C-31.8,33.9,-42,22.9,-51.2,5.2C-60.3,-12.5,-68.6,-36.9,-59.9,-51.9C-51.2,-66.9,-25.6,-72.6,-1.8,-71.2C22,-69.8,44,-61.2,54.1,-45.9Z"
+                transform="translate(100 100)"
+              />
+            </svg>
+            <h3 class="popup__title">
+              {{ name }}
+            </h3>
+            <p class="popup__description">
+              {{ description }}
+            </p>
+          </div>
 
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_three }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_three }}
-          </p>
-        </div>
-
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_four }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_four }}
-          </p>
-        </div>
-
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_five }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_five }}
-          </p>
-        </div>
-
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_six }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_six }}
-          </p>
-        </div>
-
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_seven }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_seven }}
-          </p>
-        </div>
-
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_eight }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_eight }}
-          </p>
-        </div>
-
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_nine }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_nine }}
-          </p>
-        </div>
-
-        <div class="popup__cards">
-          <h3 class="popup__title">
-            {{ question_ten }}
-          </h3>
-          <p class="popup__description">
-            {{ answer_ten }}
-          </p>
+          <div class="popup__cards">
+            <h3 class="popup__title">
+              {{ name_two }}
+            </h3>
+            <p class="popup__description">
+              {{ description_two }}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -123,6 +141,10 @@ export default {
   data() {
     return {
       show: false,
+      about_us: false,
+      faq: false,
+      team: false,
+
       title: "",
       content: "",
       title_two: "",
@@ -147,6 +169,10 @@ export default {
       answer_nine: "",
       question_ten: "",
       answer_ten: "",
+      name: "",
+      name_two: "",
+      description: "",
+      description_two: "",
     };
   },
   methods: {
@@ -156,8 +182,6 @@ export default {
 
       this.title = message["title"];
       this.content = message["content"];
-      this.title_two = message["title_two"];
-      this.content_two = message["content_two"];
 
       this.question_one = message["question_one"];
       this.answer_one = message["answer_one"];
@@ -179,6 +203,12 @@ export default {
       this.answer_nine = message["answer_nine"];
       this.question_ten = message["question_ten"];
       this.answer_ten = message["answer_ten"];
+      this.faq = true;
+
+      this.name = message["name"];
+      this.name_two = message["name_two"];
+      this.description = message["description"];
+      this.description_two = message["description_two"];
     },
 
     close_popup() {
