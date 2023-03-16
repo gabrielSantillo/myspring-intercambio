@@ -2,7 +2,7 @@
   <div class="popup" ref="popup">
     <div class="popup-inner container" v-if="show">
       <div class="popup__card">
-        <div class="popup__cards" v-if="about_us">
+        <div class="popup__cards">
           <h3 class="popup__title">
             {{ title }}
           </h3>
@@ -11,7 +11,7 @@
           </p>
         </div>
 
-        <div class="popup__card" name="faq">
+        <div class="popup__cards" ref="faq">
           <div class="popup__cards">
             <h3 class="popup__title">
               {{ question_one }}
@@ -103,7 +103,7 @@
           </div>
         </div>
 
-        <div class="popup__card-team" v-if="team">
+        <div class="popup__card-team">
           <div class="popup__cards-team">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -147,8 +147,7 @@ export default {
 
       title: "",
       content: "",
-      title_two: "",
-      content_two: "",
+
       question_one: "",
       answer_one: "",
       question_two: "",
@@ -169,6 +168,7 @@ export default {
       answer_nine: "",
       question_ten: "",
       answer_ten: "",
+
       name: "",
       name_two: "",
       description: "",
@@ -180,30 +180,30 @@ export default {
       this.$refs.popup.classList.add("popup-dark");
       this.show = true;
 
-      this.title = message["title"];
-      this.content = message["content"];
+        this.title = message["title"];
+        this.content = message["content"];
 
-      this.question_one = message["question_one"];
-      this.answer_one = message["answer_one"];
-      this.question_two = message["question_two"];
-      this.answer_two = message["answer_two"];
-      this.question_three = message["question_three"];
-      this.answer_three = message["answer_three"];
-      this.question_four = message["question_four"];
-      this.answer_four = message["answer_four"];
-      this.question_five = message["question_five"];
-      this.answer_five = message["answer_five"];
-      this.question_six = message["question_six"];
-      this.answer_six = message["answer_six"];
-      this.question_seven = message["question_seven"];
-      this.answer_seven = message["answer_seven"];
-      this.question_eight = message["question_eight"];
-      this.answer_eight = message["answer_eight"];
-      this.question_nine = message["question_nine"];
-      this.answer_nine = message["answer_nine"];
-      this.question_ten = message["question_ten"];
-      this.answer_ten = message["answer_ten"];
-      this.faq = true;
+        this.question_one = message["question_one"];
+        this.answer_one = message["answer_one"];
+        this.question_two = message["question_two"];
+        this.answer_two = message["answer_two"];
+        this.question_three = message["question_three"];
+        this.answer_three = message["answer_three"];
+        this.question_four = message["question_four"];
+        this.answer_four = message["answer_four"];
+        this.question_five = message["question_five"];
+        this.answer_five = message["answer_five"];
+        this.question_six = message["question_six"];
+        this.answer_six = message["answer_six"];
+        this.question_seven = message["question_seven"];
+        this.answer_seven = message["answer_seven"];
+        this.question_eight = message["question_eight"];
+        this.answer_eight = message["answer_eight"];
+        this.question_nine = message["question_nine"];
+        this.answer_nine = message["answer_nine"];
+        this.question_ten = message["question_ten"];
+        this.answer_ten = message["answer_ten"];
+
 
       this.name = message["name"];
       this.name_two = message["name_two"];
@@ -261,6 +261,10 @@ export default {
   flex-direction: column;
   row-gap: 1rem;
   align-items: center;
+}
+
+.popup__cards-faq {
+  display: none;
 }
 
 .popup__close {

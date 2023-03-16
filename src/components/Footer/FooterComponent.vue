@@ -129,9 +129,7 @@ export default {
         this.$root.$emit(`popup`, this.about_us);
       } else if(event.currentTarget['name'] === 'team') {
         this.$root.$emit(`popup`, this.team);
-      } else if (event.currentTarget['name'] === 'faq') {
-        this.$root.$emit(`popup`, this.faq);
-      }
+      } 
       
       
     },
