@@ -9,14 +9,32 @@ export default {
   data() {
     return {
       faq: {
-        title: "Envie sua dúvida através do nosso e-mail.",
-        content: "contato@myspringintercambio.com"
+        question_one: "Pergunta",
+        answer_one: "Resposta",
+        question_two: "Pergunta",
+        answer_two: "Resposta",
+        question_three: "Pergunta",
+        answer_three: "Resposta",
+        question_four: "Pergunta",
+        answer_four: "Resposta",
+        question_five: "Pergunta",
+        answer_five: "Resposta",
+        question_six: "Pergunta",
+        answer_six: "Resposta",
+        question_seven: "Pergunta",
+        answer_seven: "Resposta",
+        question_eight: "Pergunta",
+        answer_eight: "Resposta",
+        question_nine: "Pergunta",
+        answer_nine: "Resposta",
+        question_ten: "Pergunta",
+        answer_ten: "Resposta",
       }
     };
   },
   methods: {
     popup() {
-        this.$root.$emit(`popup`, this.faq);
+        this.$root.$emit(`popup-faq`, this.faq);
     },
   },
 };
