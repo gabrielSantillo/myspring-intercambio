@@ -104,14 +104,10 @@
         </div>
 
         <div class="popup__card-team" v-if="team">
-          <div class="popup__cards-team">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill="#A4D233"
-                d="M54.1,-45.9C64.1,-30.5,62.2,-8.4,54.3,6.9C46.4,22.2,32.6,30.7,19,35.9C5.3,41,-8.2,43,-20,38.5C-31.8,33.9,-42,22.9,-51.2,5.2C-60.3,-12.5,-68.6,-36.9,-59.9,-51.9C-51.2,-66.9,-25.6,-72.6,-1.8,-71.2C22,-69.8,44,-61.2,54.1,-45.9Z"
-                transform="translate(100 100)"
-              />
-            </svg>
+          <div class="popup__cards">
+            <div class="popup__image">
+              <img src="@/img/naty.png" alt="" />
+            </div>
             <h3 class="popup__title">
               {{ name }}
             </h3>
@@ -121,6 +117,10 @@
           </div>
 
           <div class="popup__cards">
+            <div class="popup__image">
+              <img src="@/img/gabi.png" alt="" />
+            </div>
+
             <h3 class="popup__title">
               {{ name_two }}
             </h3>
@@ -211,7 +211,7 @@ export default {
         this.question_ten = message["question_ten"];
         this.answer_ten = message["answer_ten"];
       } else if (message["team"]) {
-        this.about_us = true;
+        this.about_us = false;
         this.faq = false;
         this.team = true;
         this.name = message["name"];
@@ -238,7 +238,7 @@ export default {
 
 .popup-dark {
   position: fixed;
-  top: 0;
+  top: 1rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -262,7 +262,6 @@ export default {
 .popup__card {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
   align-items: center;
 }
 
@@ -273,12 +272,36 @@ export default {
   align-items: center;
 }
 
-.display-none {
-  display: none;
+.popup__card-team {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 
-.popup__cards-faq {
-  display: none;
+.popup__image {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #C5E86C 34%,
+    #A4D233 66%,
+  );
+
+  box-shadow: 0 2px 4px hsla(157, 54%, 18%, .3);
+  width: 315px;
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  margin: auto;
+  border-radius: 66% 34% 59% 41% / 30% 28% 72% 70%;
+  overflow: hidden;
+}
+
+img {
+  max-width: 200px;
+  justify-self: center;
+  bottom: 0;
 }
 
 .popup__close {
@@ -291,5 +314,17 @@ export default {
 
 .popup__close:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 1200px) {
+  .popup__card-team {
+    flex-direction: row;
+    column-gap: 5rem;
+  }
+
+  .popup__description {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
 }
 </style>
