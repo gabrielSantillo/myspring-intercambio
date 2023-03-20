@@ -1,25 +1,28 @@
 <template>
-  <div class="cookies">
+  <div class="cookies" v-if="cookie_accepted">
     <div class="cookies__container">
+      <div class="close-button">
+        <i class="ri-close-fill"></i>
+      </div>
       <div class="cookies__description">
         <p>
           Usamos cookies em nosso site para analisar sua interação com ele. Ao
           aceitar, você concorda com o uso de cookies.
+          <a
+            class="cookies-privacy"
+            href="https://drive.google.com/file/d/14nKWa4l42Yh_SttuuCtjcpXXy3amatg0/view"
+            target="_blank"
+            >Política de Cookies</a
+          >
         </p>
-        <a
-          href="https://drive.google.com/file/d/14nKWa4l42Yh_SttuuCtjcpXXy3amatg0/view"
-          target="_blank"
-          >Política de Cookies</a
-        >
       </div>
       <div class="cookies__button">
-        <div class="buttons">
-          <button class="button">Aceitar</button>
-          <button class="button">Rejeitar</button>
-        </div>
-        <div class="close-button">
-          <i class="ri-close-fill"></i>
-        </div>
+        <button class="button button-accept" @click="acceptCookie">
+          Aceitar
+        </button>
+        <button class="button button-reject" @click="rejectCookie">
+          Rejeitar
+        </button>
       </div>
     </div>
   </div>
@@ -28,37 +31,105 @@
 <script>
 import cookies from "vue-cookies";
 export default {
+  data() {
+    return {
+      cookie_accepted: false,
+    };
+  },
+
   methods: {
-    cookie() {
-      alert("testing");
+    acceptCookie() {
+      cookies.set("cookie-policy", "accepeted");
+      this.cookie_accepted = false;
+    },
+    rejectCookie() {
+      cookies.set("cookie-policy", "rejected");
+      this.cookie_accepted = false;
     },
   },
+
   mounted() {
-    if (cookies.get("cookies-privacy") === null) {
-      this.$root.$on("cookie", this.cookie);
+    if (!cookies.get("cookie-policy")) {
+      this.cookie_accepted = true;
     }
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "@/scss/variables.scss";
+
 .cookies {
   z-index: 1000;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: green;
+  background-color: $--text-color;
   color: white;
-  height: 150px;
+  height: 260px;
   margin: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .cookies__container {
-    padding: 1rem .75rem;
-    display: flex;
-    column-gap: 1rem;
-    justify-content: space-around;
+  padding: 1.25rem 0.75rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  position: relative;
+}
+
+.cookies-privacy {
+  color: #fff;
+  text-decoration: underline;
+  display: block;
+}
+
+.close-button {
+  display: flex;
+  justify-content: end;
+  font-size: 20px;
+
+  > i {
+    transition: 0.4s;
+    border-radius: 0.25rem;
+  }
+
+  > i:hover {
+    background-color: #fff;
+    color: $--text-color;
+    cursor: pointer;
+  }
+}
+
+.cookies__button {
+  display: grid;
+  row-gap: 1rem;
+
+  .button {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #fff;
+  }
+
+  .button-accept {
+    color: $--text-color;
+    background-color: #fff;
+    transition: 0.4s;
+  }
+
+  .button-accept:hover {
+    color: #fff;
+    background-color: $--text-color;
+  }
+
+  .button-reject:hover {
+    color: $--text-color;
+    background-color: #fff;
+  }
 }
 </style>
