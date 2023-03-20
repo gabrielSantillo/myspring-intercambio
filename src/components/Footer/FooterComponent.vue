@@ -138,9 +138,13 @@
           &#169; 2023 MySpring Intercâmbio. Todos os direitos reservados.
         </p>
         <div class="footer__terms">
-          <button name="privacy" @click="popup($event)" class="footer__terms-link">
+          <a
+            href="https://drive.google.com/file/d/132ZPiQYU4eFDndDSeHV7KquIgMde-GTC/view?usp=share_link"
+            target="_blank"
+            class="footer__terms-link"
+          >
             Política de Privacidade
-          </button>
+          </a>
           <popup-component></popup-component>
         </div>
       </div>
@@ -151,7 +155,9 @@
 <script>
 import PopupComponent from "../Popup/PopupComponent.vue";
 import FooterFaq from "./FooterFaq.vue";
+
 export default {
+  components: { PopupComponent, FooterFaq },
   data() {
     return {
       about_us: {
@@ -171,7 +177,7 @@ export default {
       },
     };
   },
-  components: { PopupComponent, FooterFaq },
+
   methods: {
     popup(event) {
       if (event.currentTarget["name"] === "about-us") {
