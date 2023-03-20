@@ -2,27 +2,29 @@
   <div class="cookies" v-if="cookie_accepted">
     <div class="cookies__container">
       <div class="close-button">
-        <i class="ri-close-fill"></i>
+        <i class="ri-close-fill" @click="closeCookie"></i>
       </div>
-      <div class="cookies__description">
-        <p>
-          Usamos cookies em nosso site para analisar sua interação com ele. Ao
-          aceitar, você concorda com o uso de cookies.
-          <a
-            class="cookies-privacy"
-            href="https://drive.google.com/file/d/14nKWa4l42Yh_SttuuCtjcpXXy3amatg0/view"
-            target="_blank"
-            >Política de Cookies</a
-          >
-        </p>
-      </div>
-      <div class="cookies__button">
-        <button class="button button-accept" @click="acceptCookie">
-          Aceitar
-        </button>
-        <button class="button button-reject" @click="rejectCookie">
-          Rejeitar
-        </button>
+      <div class="cookies__container-content">
+        <div class="cookies__description">
+          <p>
+            Usamos cookies em nosso site para analisar sua interação com ele. Ao
+            aceitar, você concorda com o uso de cookies.
+            <a
+              class="cookies-privacy"
+              href="https://drive.google.com/file/d/14nKWa4l42Yh_SttuuCtjcpXXy3amatg0/view"
+              target="_blank"
+              >Política de Cookies</a
+            >
+          </p>
+        </div>
+        <div class="cookies__button">
+          <button class="button button-accept" @click="acceptCookie">
+            Aceitar
+          </button>
+          <button class="button button-reject" @click="rejectCookie">
+            Rejeitar
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -39,11 +41,14 @@ export default {
 
   methods: {
     acceptCookie() {
-      cookies.set("cookie-policy", "accepeted");
+      cookies.set("cookie-policy", "accepted");
       this.cookie_accepted = false;
     },
     rejectCookie() {
       cookies.set("cookie-policy", "rejected");
+      this.cookie_accepted = false;
+    },
+    closeCookie() {
       this.cookie_accepted = false;
     },
   },
@@ -104,32 +109,58 @@ export default {
   }
 }
 
+.cookies__container-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
 .cookies__button {
   display: grid;
   row-gap: 1rem;
+}
+
+.button {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.button-accept {
+  color: $--text-color;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+.button-accept:hover {
+  color: #fff;
+  background-color: $--text-color;
+}
+
+.button-reject:hover {
+  color: $--text-color;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 1200px) {
+  .cookies {
+    height: 130px;
+  }
+  .cookies__container-content {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .cookies__button {
+    grid-auto-flow: column;
+    column-gap: 2rem;
+  }
 
   .button {
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    color: white;
-    background-color: transparent;
-    border: 1px solid #fff;
-  }
-
-  .button-accept {
-    color: $--text-color;
-    background-color: #fff;
-    transition: 0.4s;
-  }
-
-  .button-accept:hover {
-    color: #fff;
-    background-color: $--text-color;
-  }
-
-  .button-reject:hover {
-    color: $--text-color;
-    background-color: #fff;
+    padding: 0.5rem .75rem;
   }
 }
 </style>
