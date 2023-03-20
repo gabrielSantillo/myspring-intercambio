@@ -4,15 +4,16 @@
 
     <router-view/>
     <footer-component></footer-component>
+    <cookies-component></cookies-component>
   </div>
 </template>
 
 <script>
+import CookiesComponent from './components/Cookies/CookiesComponent.vue'
 import FooterComponent from './components/Footer/FooterComponent.vue'
 import HeaderComponent from './components/HeaderComponent.vue'
 export default {
-  components: { HeaderComponent, FooterComponent },
-  
+  components: { HeaderComponent, FooterComponent, CookiesComponent },
 }
 </script>
 
