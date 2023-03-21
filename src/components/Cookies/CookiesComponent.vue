@@ -134,6 +134,10 @@ export default {
   transition: 0.4s;
 }
 
+.button-reject {
+    transition: .4s;
+}
+
 .button-accept:hover {
   color: #fff;
   background-color: $--text-color;

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="@/img/home-bg.jpg" alt="" class="home__img" />
+    <img src="@/img/home-bg.webp" alt="" class="home__img" />
 
     <div class="home__container container grid">
       <div class="home__data">
@@ -10,8 +10,7 @@
             >Experiência de <br />
             Intercâmbio</span
           >
-          <br />
-          começa aqui
+          <br />começa aqui
         </h1>
         <router-link to="/agenda" class="button">Agendar Consulta</router-link>
       </div>
@@ -60,6 +59,7 @@ export default {};
   width: 100%;
   height: 100vh;
   object-fit: cover;
+  object-position: center;
 }
 
 .home__container {
@@ -70,7 +70,6 @@ export default {};
 }
 
 .home__data-subtitle,
-.home__data-title,
 .home__social-link,
 .home__info {
   color: #fff;
@@ -89,7 +88,8 @@ export default {};
 
   > span {
     font-weight: $--font-semi-bold;
-    color: $--text-color-light;
+    color: #fff;
+    text-shadow: 1px 1px rgb(83, 83, 83);
   }
 }
 
@@ -103,6 +103,10 @@ export default {};
   font-size: 1.2rem;
   width: max-content;
   transition: 0.3s;
+}
+
+.home__social-link:hover {
+  color: $--first-color;
 }
 
 .home__info {
@@ -176,6 +180,9 @@ export default {};
     height: 100vh;
   }
 
+  .home__data-title {
+    color: #fff;
+  }
 
   .home__social {
     flex-direction: row;
