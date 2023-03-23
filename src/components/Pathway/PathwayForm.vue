@@ -84,23 +84,28 @@
       </button>
     </form>
 
-    <div class="form__price" v-if="show_result">
+    <div class="form__price" v-if="show_result"> 
       <div class="form__price-card">
         <h3 class="form__price-card-title">Orçamento</h3>
         <p class="form__price-card-description">
           Provincia: {{ province_name }}
         </p>
-        <p class="form__price-card-description">College: {{ `${college["name"]}` }}</p>
+        <p class="form__price-card-description">
+          College: {{ `${college["name"]}` }}
+        </p>
         <p class="form__price-card-description">Semanas: {{ `${weeks}` }}</p>
         <p class="form__price-card-description">
           Total: CAD$ {{ `${tuition}` }}
         </p>
-        <a
-          href="https://api.whatsapp.com/send?phone=5519992137096&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exige."
-          class="button form__button form__button-price"
-          target="_blank"
-          >Mais Informações</a
-        >
+        <div>
+          <a
+            href="https://api.whatsapp.com/send?phone=5519992137096&text=Olá! Acabei de fazer uma simulção de quantas semanas preciso para atingir o nível de inglês que o college que desejo exige."
+            class="button form__button form__button-price"
+            target="_blank"
+            >Mais Informações</a
+          >
+          <button @click="reset_form" class="form__button form__button-reset">Resetar Formulário</button>
+        </div>
       </div>
     </div>
   </div>
@@ -133,16 +138,15 @@ export default {
         })
         // in case off success set a cookie with the order id and push the user to the orders page
         .then((response) => {
-          response 
-          this.colleges = response["data"][0]["colleges"]
-          this.province_name = response["data"][0]["province"]
-          this.show_college_options = true
+          response;
+          this.colleges = response["data"][0]["colleges"];
+          this.province_name = response["data"][0]["province"];
+          this.show_college_options = true;
         })
         .catch((error) => {
-          error
-          alert(this.province)
+          error;
+          alert(this.province);
         });
-      
     },
 
     calculate() {
@@ -159,6 +163,11 @@ export default {
 
       this.show_result = true;
     },
+
+    reset_form() {
+      this.show_college_options = false
+      this.show_result = false
+    }
   },
 };
 </script>
@@ -212,7 +221,7 @@ export default {
   cursor: pointer;
 }
 
-.form__button:hover {
+.form__button-price:hover {
   box-shadow: 4px 8px 8px hsla(157, 12%, 90%, 1);
 }
 
@@ -245,6 +254,12 @@ export default {
   box-shadow: 0 2px 4px hsla(348, 54%, 18%, 0.25);
   padding: 1.5rem 5rem 1.5rem 1.5rem;
   transition: 0.3s;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
 }
 
 .form__price-card-title {
@@ -253,6 +268,14 @@ export default {
 
 .form__button-price {
   margin-top: 1rem;
+}
+
+.form__button-reset {
+  background-color: rgb(235, 75, 67);
+}
+
+.form__button-reset:hover {
+  box-shadow: 4px 8px 8px hsla(0, 100%, 95%, 1);
 }
 
 .form__select {
