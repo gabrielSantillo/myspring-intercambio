@@ -40,19 +40,17 @@
           <div>
             <label for="" class="form__label">Provincia</label>
             <select v-model="province" class="form__select">
-              <option value="Alberta">Alberta</option>
-              <option value="British Columbia">British Columbia</option>
-              <option value="Manitoba">Manitoba</option>
-              <option value="New Brunswick">New Brunswick</option>
-              <option value="New Foundland and Labrador">
-                New Foundland and Labrador
-              </option>
-              <option value="Nova Scotia">Nova Scotia</option>
-              <option value="Ontario">Ontario</option>
-              <option value="Prince Edward Island">Prince Edward Island</option>
-              <option value="Quebec">Quebec</option>
-              <option value="Saskatchewan">Saskatchewan</option>
-              <option value="Yukon">Yukon</option>
+              <option value="1">Alberta</option>
+              <option value="2">British Columbia</option>
+              <option value="3">Manitoba</option>
+              <option value="4">New Brunswick</option>
+              <option value="5">New Foundland and Labrador</option>
+              <option value="6">Nova Scotia</option>
+              <option value="7">Ontario</option>
+              <option value="8">Prince Edward Island</option>
+              <option value="9">Quebec</option>
+              <option value="10">Saskatchewan</option>
+              <option value="11">Yukon</option>
             </select>
           </div>
         </div>
@@ -70,7 +68,7 @@
                 :key="index"
                 :value="college"
               >
-                {{ college }}
+                {{ college["name"] }}
               </option>
             </select>
           </div>
@@ -90,9 +88,9 @@
       <div class="form__price-card">
         <h3 class="form__price-card-title">Orçamento</h3>
         <p class="form__price-card-description">
-          Provincia: {{ `${province}` }}
+          Provincia: {{ province_name }}
         </p>
-        <p class="form__price-card-description">College: {{ `${college}` }}</p>
+        <p class="form__price-card-description">College: {{ `${college["name"]}` }}</p>
         <p class="form__price-card-description">Semanas: {{ `${weeks}` }}</p>
         <p class="form__price-card-description">
           Total: CAD$ {{ `${tuition}` }}
@@ -109,60 +107,42 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
       tuition: 0,
       weeks: 0,
       level: "",
-      province: "",
+      province_name: undefined,
       college: "",
-      colleges: [
-        "Bow Valley College",
-        "Concordia University of Edmonton",
-        "MacEwan University",
-        "Northern Alberta Institute of Technology",
-        "Olds College",
-        "Red Dear Polytechnic",
-        "Southern Alberta Institute of Technology",
-      ],
-      provinces: [
-        "Alberta",
-        "British Columbia",
-        "Manitoba",
-        "New Brunswick",
-        "New Foundland and Labrador",
-        "Nova Scotia",
-        "Ontario",
-        "Prince Edward Island",
-        "Quebec",
-        "Saskatchewan",
-        "Yukon",
-      ],
+      colleges: undefined,
       show_college_options: false,
       show_result: false,
-
-      ab: [
-        "Bow Valley College",
-        "Concordia University of Edmonton",
-        "MacEwan University",
-        "Northern Alberta Institute of Technology",
-        "Olds College",
-        "Red Dear Polytechnic",
-        "Southern Alberta Institute of Technology",
-      ],
-      mb: [
-        "Assiniboine Community College",
-        "International College of Manibota",
-        "Manibota Institute of Trades and Technology",
-        "Red River College",
-        "University of Winnipeg Professional, Applied and Continuing Education",
-      ],
     };
   },
   methods: {
     show_colleges() {
-      this.show_college_options = true;
+      axios
+        .request({
+          url: `http://127.0.0.1:5000/api/colleges`,
+          params: {
+            province_id: this.province,
+          },
+        })
+        // in case off success set a cookie with the order id and push the user to the orders page
+        .then((response) => {
+          response 
+          this.colleges = response["data"][0]["colleges"]
+          this.province_name = response["data"][0]["province"]
+          this.show_college_options = true
+        })
+        .catch((error) => {
+          error
+          alert(this.province)
+        });
+      
     },
 
     calculate() {
